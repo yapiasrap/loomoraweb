@@ -71,7 +71,7 @@ const products = [
 // Typography
 .heading {
   font-weight: 800;
-  font-size: 2rem; // set mendekati text-h4
+  font-size: 2.5rem; // set mendekati text-h4
   line-height: 1.2;
 }
 
@@ -102,7 +102,7 @@ const products = [
     transition: background-color 0.3s ease, opacity 0.3s ease;
 
     .btn-detail {
-      background-color: orange;
+      background-color: #d4af37;
       color: #fff;
       font-size: 1rem;
       font-weight: 500;

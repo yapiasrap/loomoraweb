@@ -1,6 +1,8 @@
 <template>
   <banner-header />
   <gallery-section />
-  <banner-total />
   <about-section />
+  <banner-total />
+  <features />
+  <last-project />
 </template>

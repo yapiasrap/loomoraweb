@@ -248,7 +248,7 @@ $text-dark: #121212;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: lighten($accent, 10%);
+      background-color: lighten($color: #000000, $amount: 0);
     }
   }
 }
