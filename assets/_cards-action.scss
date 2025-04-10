@@ -1,0 +1,10 @@
+.cards-action {
+    display: flex; /* Menggunakan flexbox agar elemen sejajar */
+    align-items: center; /* Posisikan tombol sejajar vertikal */
+    gap: 0.5rem; /* Beri jarak antar elemen */
+    margin-left: 15px;
+    padding: 2;
+    margin-right: 15px;
+    margin-bottom: 12px;
+    margin-top: 15px;
+}

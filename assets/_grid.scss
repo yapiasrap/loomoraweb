@@ -1,0 +1,111 @@
+// _grid.scss
+@use 'sass:map'; // Jika butuh map.get() / map.keys()
+@use 'sass:math'; // Untuk math.div()
+@use 'variables' as vars; // Untuk $spacer
+@use 'mixins' as mix; // Untuk @include breakpoint()
+
+// Container
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 13px;
+  padding-right: 13px;
+  max-width: 100%;
+
+  @include mix.breakpoint(sm) {
+    max-width: 600px;
+  }
+
+  @include mix.breakpoint(md) {
+    max-width: 960px;
+  }
+
+  @include mix.breakpoint(lg) {
+    max-width: 1060px;
+  }
+
+  @include mix.breakpoint(xl) {
+    max-width: 1420px;
+  }
+}
+
+.container-logo-menu {
+  padding-left: 16px;
+  padding-right: 16px;
+  text-align: left;
+
+  @include mix.breakpoint(sm) {
+    max-width: 600px;
+  }
+
+  @include mix.breakpoint(md) {
+    max-width: 960px;
+  }
+
+  @include mix.breakpoint(lg) {
+    max-width: 1280px;
+  }
+
+  @include mix.breakpoint(xl) {
+    max-width: 1920px;
+  }
+}
+
+.container-hd {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 13px;
+  padding-right: 13px;
+  max-width: 100%;
+
+  @include mix.breakpoint(sm) {
+    max-width: 600px;
+  }
+
+  @include mix.breakpoint(md) {
+    max-width: 960px;
+  }
+
+  @include mix.breakpoint(lg) {
+    max-width: 1220px;
+  }
+
+  @include mix.breakpoint(xl) {
+    max-width: 1420px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1 1 100%;
+}
+
+// Fungsi menghitung persentase kolom
+@function col-percent($cols) {
+  // Gunakan math.div() untuk menghindari peringatan slash-div
+  @return math.div(100% * $cols, 12);
+}
+
+// Kelas col-1 s/d col-12
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 col-percent($i);
+    max-width: col-percent($i);
+  }
+}
+
+// Responsif col-sm-#, col-md-#, col-lg-#, col-xl-#
+@each $size in map.keys(vars.$grid-breakpoints) {
+  @for $i from 1 through 12 {
+    .col-#{$size}-#{$i} {
+      @include mix.breakpoint($size) {
+        flex: 0 0 col-percent($i);
+        max-width: col-percent($i);
+      }
+    }
+  }
+}

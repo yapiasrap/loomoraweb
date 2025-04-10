@@ -1,0 +1,150 @@
+@use 'variables' as *;
+@use "sass:list";
+
+@each $name, $values in $text-sizes {
+  .text-#{$name} {
+    font-size: list.nth($values, 1);
+    font-weight: list.nth($values, 2);
+    line-height: list.nth($values, 3);
+    letter-spacing: list.nth($values, 4);
+
+    @if list.length($values)==5 {
+      text-transform: list.nth($values, 5);
+    }
+  }
+}
+
+// Text alignments
+.text-start {
+  text-align: start;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-end {
+  text-align: end;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+
+// Font weights
+.font-weight-black {
+  font-weight: 900;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+.font-weight-medium {
+  font-weight: 500;
+}
+
+.font-weight-regular {
+  font-weight: 400;
+}
+
+.font-weight-light {
+  font-weight: 300;
+}
+
+.font-weight-thin {
+  font-weight: 100;
+}
+
+// Font style
+.font-italic {
+  font-style: italic;
+}
+
+// Flexbox utilities
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.align-start {
+  align-items: flex-start;
+}
+
+.align-end {
+  align-items: flex-end;
+}
+
+@for $i from 1 through 16 {
+  .m-#{$i} {
+    margin: #{$i * $spacer};
+  }
+
+  .p-#{$i} {
+    padding: #{$i * $spacer};
+  }
+
+  .mt-#{$i} {
+    margin-top: #{$i * $spacer};
+  }
+
+  .mb-#{$i} {
+    margin-bottom: #{$i * $spacer};
+  }
+
+  .ml-#{$i} {
+    margin-left: #{$i * $spacer};
+  }
+
+  .mr-#{$i} {
+    margin-right: #{$i * $spacer};
+  }
+
+  .mx-#{$i} {
+    margin-left: #{$i * $spacer};
+    margin-right: #{$i * $spacer};
+  }
+
+  .my-#{$i} {
+    margin-top: #{$i * $spacer};
+    margin-bottom: #{$i * $spacer};
+  }
+
+  .px-#{$i} {
+    padding-left: #{$i * $spacer};
+    padding-right: #{$i * $spacer};
+  }
+
+  .py-#{$i} {
+    padding-top: #{$i * $spacer};
+    padding-bottom: #{$i * $spacer};
+  }
+}

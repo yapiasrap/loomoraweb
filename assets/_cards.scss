@@ -1,0 +1,8 @@
+.cards {
+    width: var(--cards-width, 80%); /* Bisa diubah lewat Vue */
+    border-radius: 0.6rem;
+    box-shadow: var(--cards-shadow, 0 4px 10px rgba(0, 0, 0, 0.1)); /* Default shadow */
+    overflow: hidden;
+    transition: box-shadow 0.2s ease-in-out;
+    height: var(--cards-height, fit-content);
+}
