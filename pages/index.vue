@@ -1,3 +1,9 @@
 <template>
-    <h1>sadasda</h1>
+  <banner-header />
 </template>
+
+<script setup>
+definePageMeta({
+  layout: "default",
+});
+</script>
