@@ -1,9 +1,4 @@
 <template>
   <banner-header />
+  <gallery-section />
 </template>
-
-<script setup>
-definePageMeta({
-  layout: "default",
-});
-</script>
