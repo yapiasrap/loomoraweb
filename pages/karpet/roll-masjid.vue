@@ -1,391 +1,550 @@
-<template>
-  <div>
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-content">
-        <h1>Karpet Roll Masjid</h1>
-        <p>
-          Kualitas unggul untuk memperindah setiap masjid. Temukan karpet roll yang
-          elegan dan berkualitas untuk menunjang keindahan ruang ibadah Anda.
-        </p>
-        <button class="btn-order">Pesan Sekarang</button>
-      </div>
-    </section>
+<script setup>
+import {
+  mdiCheckboxMarkedCircleOutline,
+  mdiCartOutline,
+  mdiEmailOutline,
+} from "@mdi/js";
 
-    <!-- Karpet Section -->
-    <section class="karpet-section">
-      <div class="section-header">
-        <h2>Pilihan Karpet Roll Masjid</h2>
-        <p>
-          Pilih dari ragam karpet roll yang telah dikurasi secara khusus untuk masjid,
-          dengan bahan dan kualitas terbaik.
-        </p>
-      </div>
-      <div class="karpet-grid">
-        <div 
-          v-for="(product, index) in products" 
-          :key="index" 
-          class="karpet-card"
-        >
-          <div class="card-image">
-            <img :src="product.gambar" :alt="product.grade" />
-            <div class="price-tag">
-              <span class="original">{{ product.hargaAsli }}</span>
-              <span class="diskon">{{ product.hargaDiskon }}</span>
-            </div>
+const banner = { judul: "Karpet Roll Masjid" };
+</script>
+
+<template>
+  <Top :operandata="banner" />
+
+  <!-- Header -->
+  <div class="contact-header">
+    <h1 class="section-title">Pilihan Karpet Roll Masjid Anda</h1>
+    <div class="divider">
+      <span class="line"></span>
+      <span class="dot"></span>
+      <span class="line"></span>
+    </div>
+
+    <p>
+      Kami siap membantu menghadirkan karpet roll masjid yang nyaman, estetis,
+      <br />
+      dan sesuai dengan kebutuhan ibadah di ruang suci Anda.
+    </p>
+  </div>
+
+  <div class="luxury-grid">
+    <div class="lux-row mt-20">
+      <div
+        class="lux-col image"
+        :style="{
+          backgroundImage:
+            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F7.jpeg?alt=media&token=4d6947be-b187-4882-b3d9-adeed2973443)',
+        }"
+      ></div>
+      <div class="lux-col info">
+        <div class="info-inner">
+          <p class="category">KATEGORI</p>
+          <h2 class="title">Grade Super Premium</h2>
+          <div class="price">
+            <span class="price-old">Rp. 9,3 Jt</span>
+            <span class="price-new">Rp. 9.000.000</span>
           </div>
-          <div class="card-body">
-            <h3>{{ product.grade }}</h3>
-            <ul class="product-details">
-              <li><strong>Bahan:</strong> {{ product.bahan }}</li>
-              <li><strong>Motif:</strong> {{ product.motif }}</li>
-              <li><strong>Warna:</strong> {{ product.warna }}</li>
-              <li><strong>Ukuran:</strong> {{ product.ukuran }}</li>
-              <li><strong>Tebal:</strong> {{ product.tebal }}</li>
-            </ul>
-            <button class="btn-order">Pesan Sekarang</button>
-          </div>
+          <ul class="details">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Bahan: Polypropylene</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Motif: Polos &amp; Full Motif</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Warna: Merah &amp; Hijau</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Ukuran: 120 x 600 cm</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Tebal: 24 mm</span>
+            </li>
+          </ul>
+          <button class="btn-order">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path :d="mdiCartOutline" />
+            </svg>
+            Pesan Sekarang
+          </button>
         </div>
       </div>
-    </section>
+    </div>
+
+    <div class="lux-row">
+      <div class="lux-col info">
+        <div class="info-inner">
+          <p class="category">KATEGORI</p>
+          <h2 class="title">Grade Premium</h2>
+          <div class="price">
+            <span class="price-old">Rp. 6,1 Jt</span>
+            <span class="price-new">Rp. 6.000.000</span>
+          </div>
+          <ul class="details">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Bahan: Polypropylene</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Motif: Polos &amp; Bintik</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Warna: Merah &amp; Hijau</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Ukuran: 120 x 600 cm</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Tebal: 22 mm</span>
+            </li>
+          </ul>
+          <button class="btn-order">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path :d="mdiCartOutline" />
+            </svg>
+            Pesan Sekarang
+          </button>
+        </div>
+      </div>
+      <div
+        class="lux-col image"
+        :style="{
+          backgroundImage:
+            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F9.jpeg?alt=media&token=36b8f223-0d19-4e9f-a6bd-810d54b9112f)',
+        }"
+      ></div>
+    </div>
+
+    <div class="lux-row">
+      <div
+        class="lux-col image"
+        :style="{
+          backgroundImage:
+            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F11.jpeg?alt=media&token=c3193dde-c0af-47f6-9516-047de30fee3a)',
+        }"
+      ></div>
+      <div class="lux-col info">
+        <div class="info-inner">
+          <p class="category">KATEGORI</p>
+          <h2 class="title">Grade Super</h2>
+          <div class="price">
+            <span class="price-old">Rp. 5,1 Jt</span>
+            <span class="price-new">Rp. 5.000.000</span>
+          </div>
+          <ul class="details">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Bahan: Polypropylene</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Motif: Polos, Bintik, Love, Minimalis &amp; Bunga</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Warna: Merah &amp; Hijau</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Ukuran: 120 x 600 cm</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Tebal: 17 mm</span>
+            </li>
+          </ul>
+          <button class="btn-order">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path :d="mdiCartOutline" />
+            </svg>
+            Pesan Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lux-row">
+      <div class="lux-col info">
+        <div class="info-inner">
+          <p class="category">KATEGORI</p>
+          <h2 class="title">Grade A</h2>
+          <div class="price">
+            <span class="price-old">Rp. 6,1 Jt</span>
+            <span class="price-new">Rp. 6.000.000</span>
+          </div>
+          <ul class="details">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Bahan: Polypropylene</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Motif: Polos, Bintik &amp; Bunga</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Warna: Merah &amp; Hijau</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Ukuran: 120 x 600 cm</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Tebal: 22 mm</span>
+            </li>
+          </ul>
+          <button class="btn-order">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path :d="mdiCartOutline" />
+            </svg>
+            Pesan Sekarang
+          </button>
+        </div>
+      </div>
+      <div
+        class="lux-col image"
+        :style="{
+          backgroundImage:
+            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F3.jpeg?alt=media&token=8fd4a626-9cf6-4eac-9119-e6bdc9f75dca)',
+        }"
+      ></div>
+    </div>
+
+    <div class="lux-row">
+      <div
+        class="lux-col image"
+        :style="{
+          backgroundImage:
+            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F4.jpeg?alt=media&token=568d0b1f-5f2d-40cb-a4be-e4101f10bc83)',
+        }"
+      ></div>
+      <div class="lux-col info">
+        <div class="info-inner">
+          <p class="category">KATEGORI</p>
+          <h2 class="title">Grade B</h2>
+          <div class="price">
+            <span class="price-old">Rp. 3,7 Jt</span>
+            <span class="price-new">Rp. 3.500.000</span>
+          </div>
+          <ul class="details">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Bahan: Polypropylene</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Motif: Polos</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Warna: Merah &amp; Hijau</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Ukuran: 120 x 600 cm</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Tebal: 13-14 mm</span>
+            </li>
+          </ul>
+          <button class="btn-order">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path :d="mdiCartOutline" />
+            </svg>
+            Pesan Sekarang
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="lux-row">
+      <div class="lux-col info">
+        <div class="info-inner">
+          <p class="category">KATEGORI</p>
+          <h2 class="title">Grade C</h2>
+          <div class="price">
+            <span class="price-old">Rp. 2,2 Jt</span>
+            <span class="price-new">Rp. 2.000.000</span>
+          </div>
+          <ul class="details">
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Bahan: Polypropylene</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Motif: Polos, Bintik, Love, Minimalis &amp; Bunga</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Warna: Merah &amp; Hijau</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Ukuran: 120 x 600 cm</span>
+            </li>
+            <li>
+              <svg class="icon" viewBox="0 0 24 24">
+                <path :d="mdiCheckboxMarkedCircleOutline" />
+              </svg>
+              <span>Tebal: 11-12 mm</span>
+            </li>
+          </ul>
+          <button class="btn-order">
+            <svg class="icon" viewBox="0 0 24 24">
+              <path :d="mdiCartOutline" />
+            </svg>
+            Pesan Sekarang
+          </button>
+        </div>
+      </div>
+      <div
+        class="lux-col image"
+        :style="{
+          backgroundImage:
+            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F5.jpeg?alt=media&token=99093ffe-47a1-40e1-bd50-b715c223914d)',
+        }"
+      ></div>
+    </div>
   </div>
 </template>
 
-<script setup>
-const products = [
-  {
-    grade: "Grade Super Premium",
-    hargaAsli: "Rp. 9,3 Jt",
-    hargaDiskon: "Rp. 9.000.000",
-    bahan: "Polypropylene",
-    motif: "Polos & Full Motif",
-    warna: "Merah & Hijau",
-    ukuran: "120 x 600 cm",
-    tebal: "24 mm",
-    gambar:
-      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/heromobile",
-  },
-  {
-    grade: "Grade Premium",
-    hargaAsli: "Rp. 6,1 Jt",
-    hargaDiskon: "Rp. 6.000.000",
-    bahan: "Polypropylene",
-    motif: "Polos & Bintik",
-    warna: "Merah & Hijau",
-    ukuran: "120 x 600 cm",
-    tebal: "22 mm",
-    gambar:
-      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/heromobile",
-  },
-  {
-    grade: "Grade Super",
-    hargaAsli: "Rp. 5,1 Jt",
-    hargaDiskon: "Rp. 5.000.000",
-    bahan: "Polypropylene",
-    motif: "Polos, Bintik, Love, Minimalis & Bunga",
-    warna: "Merah & Hijau",
-    ukuran: "120 x 600 cm",
-    tebal: "17 mm",
-    gambar:
-      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/heromobile",
-  },
-  {
-    grade: "Grade A",
-    hargaAsli: "Rp. 4.7 Jt",
-    hargaDiskon: "Rp. 4.500.000",
-    bahan: "Polypropylene",
-    motif: "Polos, Bintik & Bunga",
-    warna: "Merah & Hijau",
-    ukuran: "120 x 600 cm",
-    tebal: "14-15 mm",
-    gambar:
-      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/heromobile",
-  },
-  {
-    grade: "Grade B",
-    hargaAsli: "Rp. 3,7 Jt",
-    hargaDiskon: "Rp. 3.500.000",
-    bahan: "Polypropylene",
-    motif: "Polos",
-    warna: "Merah & Hijau",
-    ukuran: "120 x 600 cm",
-    tebal: "13-14 mm",
-    gambar:
-      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/heromobile",
-  },
-  {
-    grade: "Grade C",
-    hargaAsli: "Rp. 2,2 Jt",
-    hargaDiskon: "Rp. 2.000.000",
-    bahan: "Polypropylene",
-    motif: "Polos & Bintik",
-    warna: "Merah & Hijau",
-    ukuran: "120 x 600 cm",
-    tebal: "11-12 mm",
-    gambar:
-      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/heromobile",
-  },
-];
-</script>
-
-<style scoped lang="scss">
-/* Variabel Warna */
-$primary-color: #d4af37;  // aksen emas
-$secondary-color: #333;
-$bg-color: #fff;
-$accent-color: #f5f5f5;
-$btn-bg: $primary-color;
-$btn-hover: darken($btn-bg, 10%);
-
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+<style lang="scss" scoped>
+.contact-header {
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-body {
-  font-family: "Helvetica Neue", Arial, sans-serif;
-  background: $accent-color;
-  color: $secondary-color;
-}
-
-/* HERO SECTION */
-.hero-section {
-  position: relative;
-  height: 500px;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.45),
-      rgba(0, 0, 0, 0.45)
-    ),
-    url("https://images.unsplash.com/photo-1594737625785-2c0e7d023f67?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxMTI2ODZ8MHwxfHNlYXJjaHwzfHxNYXNpZHN8ZW58MHx8fHwxNjg2ODg4NDkz&ixlib=rb-1.2.1&q=80&w=1080")
-      center/cover no-repeat;
+.divider {
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: 0 1rem;
 
-  .hero-content {
-    color: $bg-color;
-    max-width: 800px;
-    
-    h1 {
-      font-size: 3.2rem;
-      margin-bottom: 1rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    
-    p {
-      font-size: 1.4rem;
-      line-height: 1.6;
-      margin-bottom: 1.5rem;
-    }
-    
-    .btn-order {
-      background: $btn-bg;
-      color: $bg-color;
-      border: none;
-      border-radius: 30px;
-      padding: 0.8rem 1.8rem;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: background 0.3s ease, transform 0.3s ease;
-      
-      &:hover {
-        background: $btn-hover;
-        transform: scale(1.03);
-      }
-    }
+  .line {
+    width: 50px;
+    height: 2px;
+    background: #ccc;
+    margin: 0 0.5rem;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+    background: #d4af37;
+    border-radius: 50%;
   }
 }
 
-/* KARPET SECTION */
-.karpet-section {
-  padding: 4rem 2rem;
-  background: $bg-color;
-  
-  .section-header {
-    text-align: center;
-    margin-bottom: 2.5rem;
-    
-    h2 {
-      font-size: 2.8rem;
-      color: $primary-color;
-      margin-bottom: 0.5rem;
-    }
-    
-    p {
-      font-size: 1.1rem;
-      color: $secondary-color;
-    }
+.section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: #333;
+  position: relative;
+  /* Garis bawah menggunakan pseudo-element */
+  &::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 0.5rem auto 0;
   }
-  
-  .karpet-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  
-  .karpet-card {
-    background: $accent-color;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Layout dan style utama */
+.luxury-grid {
+  color: #444;
+  background: #fafafa;
+  padding: 2rem 1rem;
+
+  .lux-row {
     display: flex;
-    flex-direction: column;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    
-    &:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-    }
-    
-    .card-image {
+    flex-wrap: wrap;
+    margin: 2rem 0;
+    align-items: stretch;
+    /* Membuat jarak antar row */
+
+    .lux-col {
+      width: 100%;
+      height: 550px;
       position: relative;
       overflow: hidden;
-      
-      img {
-        width: 100%;
-        height: 220px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.98);
+
+      &.image {
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        /* Tidak ada efek hover, namun style gambarnya dibuat lebih bersih */
+        filter: brightness(0.95);
       }
-      
-      &:hover img {
-        transform: scale(1.05);
+
+      &.info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.98), #fefefe);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
       }
-      
-      .price-tag {
-        position: absolute;
-        bottom: 10px;
-        right: 10px;
-        background: rgba(255, 255, 255, 0.95);
-        padding: 0.4rem 0.8rem;
-        border-radius: 20px;
-        text-align: right;
-        
-        .original {
-          text-decoration: line-through;
-          font-size: 0.8rem;
-          color: $secondary-color;
-        }
-        
-        .diskon {
-          font-size: 1rem;
-          font-weight: bold;
-          color: $primary-color;
+    }
+  }
+
+  .info-inner {
+    max-width: 90%;
+    text-align: left;
+
+    .category {
+      font-weight: 600;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      margin-bottom: 0.5rem;
+      color: #d4af37;
+      text-transform: uppercase;
+    }
+
+    .title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0.3rem 0 1rem;
+      color: #333;
+    }
+
+    .price {
+      margin-bottom: 1.2rem;
+      .price-old {
+        font-size: 1.2rem;
+        color: #999;
+        text-decoration: line-through;
+      }
+      .price-new {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: #d4af37;
+        margin-left: 0.75rem;
+      }
+    }
+
+    .details {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+      li {
+        display: flex;
+        align-items: center;
+        font-size: 0.95rem;
+        margin-bottom: 0.65rem;
+        svg.icon {
+          width: 20px;
+          height: 20px;
+          fill: #d4af37;
+          margin-right: 0.5rem;
         }
       }
     }
-    
-    .card-body {
-      padding: 1.2rem;
-      flex-grow: 1;
-      display: flex;
-      flex-direction: column;
+
+    .btn-order {
+      background-color: #d4af37;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      display: inline-flex;
       align-items: center;
-      
-      h3 {
-        font-size: 1.5rem;
-        color: $primary-color;
-        margin-bottom: 1rem;
+      transition: background 0.3s ease;
+      svg.icon {
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+        margin-right: 0.5rem;
       }
-      
-      .product-details {
-        list-style: none;
-        width: 100%;
-        margin-bottom: 1.5rem;
-        
-        li {
-          font-size: 0.9rem;
-          color: $secondary-color;
-          margin-bottom: 0.5rem;
-          
-          strong {
-            color: $primary-color;
-          }
-        }
-      }
-      
-      .btn-order {
-        background: $btn-bg;
-        color: $bg-color;
-        border: none;
-        border-radius: 30px;
-        padding: 0.7rem 1.5rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: background 0.3s ease, transform 0.3s ease;
-        width: 100%;
-        text-align: center;
-        
-        &:hover {
-          background: $btn-hover;
-          transform: scale(1.02);
-        }
+      &:hover {
+        background-color: darken(#d4af37, 8%);
       }
     }
   }
 }
 
-/* RESPONSIVE ADJUSTMENTS */
-@media (max-width: 768px) {
-  .hero-section {
-    height: 380px;
-    .hero-content {
-      h1 {
-        font-size: 2.6rem;
-      }
-      p {
-        font-size: 1.2rem;
-      }
-      .btn-order {
-        font-size: 1rem;
-        padding: 0.7rem 1.5rem;
-      }
-    }
-  }
-  
-  .karpet-section {
-    padding: 3rem 1rem;
-    .section-header {
-      h2 {
-        font-size: 2.2rem;
-      }
-      p {
-        font-size: 1rem;
-      }
-    }
-    
-    .karpet-grid {
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    }
-    
-    .karpet-card {
-      .card-image {
-        img {
-          height: 200px;
-        }
-      }
-      .card-body {
-        h3 {
-          font-size: 1.3rem;
-        }
-        .product-details {
-          li {
-            font-size: 0.85rem;
-          }
-        }
-        .btn-order {
-          font-size: 0.95rem;
-          padding: 0.6rem 1.2rem;
-        }
-      }
+/* Responsive Styles */
+@media (min-width: 768px) {
+  .luxury-grid {
+    padding: 2rem 3rem;
+    .lux-row .lux-col {
+      width: 48%;
+      margin: 1%;
     }
   }
 }
