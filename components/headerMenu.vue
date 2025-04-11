@@ -23,7 +23,7 @@ const state = reactive({
         { title: "Karpet Tile", to: "/produk/karpet-tile" },
       ],
     },
-    { title: "PROJEK", to: "/kontak" },
+    { title: "PROJEK", to: "/projek" },
     { title: "KONTAK", to: "/kontak" },
   ],
 });
@@ -143,7 +143,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
             class="contact-btn"
             :class="{ 'btn-scrolled': isScrolled }"
           >
-            KONTAK KAMI
+            HUBUNGI KAMI
           </NuxtLink>
         </div>
       </div>
@@ -158,12 +158,6 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
 </template>
 
 <style scoped lang="scss">
-/* ====== Warna Utama ====== */
-$bg-dark: #121212;
-$accent: #d4af37;
-$text-light: #ffffff;
-$text-dark: #121212;
-
 /* ====== Global Header ====== */
 .app-bar {
   position: fixed;
@@ -175,13 +169,13 @@ $text-dark: #121212;
   justify-content: center;
   transition: all 0.5s ease-in-out;
   background-color: transparent;
-  color: $text-light;
+  color: #ffffff;
   z-index: 900;
 
   &.scrolled-app-bar {
-    background-color: $text-light;
+    background-color: #ffffff;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    color: $text-dark;
+    color: #121212;
   }
 }
 
@@ -193,7 +187,7 @@ $text-dark: #121212;
   width: 60%;
   max-width: 300px;
   height: 100vh;
-  background: $bg-dark;
+  background: #121212;
   z-index: 1000;
   box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
   padding: 1rem;
@@ -201,7 +195,7 @@ $text-dark: #121212;
   .divider {
     border: none;
     height: 1px;
-    background-color: $accent;
+    background-color: #d4af37;
     margin: 12px 0;
   }
 
@@ -213,14 +207,14 @@ $text-dark: #121212;
     .menu-item {
       display: block;
       padding: 10px 0;
-      color: $text-light;
+      color: #ffffff;
       text-decoration: none;
       font-size: 16px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       transition: color 0.3s;
 
       &:hover {
-        color: $accent;
+        color: #d4af37;
       }
     }
   }
@@ -239,9 +233,9 @@ $text-dark: #121212;
   .close-btn {
     margin-top: 1rem;
     padding: 8px 12px;
-    background-color: $accent;
+    background-color: #d4af37;
     border: none;
-    color: $bg-dark;
+    color: #121212;
     border-radius: 4px;
     cursor: pointer;
     font-weight: bold;
@@ -326,14 +320,14 @@ $text-dark: #121212;
     font-size: 16px;
     font-weight: 600;
     transition: color 0.3s ease;
-    color: $text-light;
+    color: #ffffff;
 
     &:hover {
-      color: $accent;
+      color: #d4af37;
     }
 
     &.scrolled {
-      color: $text-dark;
+      color: #121212;
     }
   }
 
@@ -343,12 +337,12 @@ $text-dark: #121212;
     position: absolute;
     top: 120%; /* jarak dropdown dari menu induk */
     left: 0;
-    background-color: $text-light;
-    color: $text-dark;
+    background-color: #ffffff;
+    color: #121212;
     list-style: none;
     padding: 0.5rem 0;
     min-width: 220px;
-    border: 1px solid $accent;
+    border: 1px solid #d4af37;
     border-radius: 4px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     z-index: 999;
@@ -363,8 +357,8 @@ $text-dark: #121212;
     transition: background-color 0.3s, color 0.3s;
 
     &:hover {
-      background-color: $accent;
-      color: $bg-dark;
+      background-color: #d4af37;
+      color: #121212;
     }
   }
 
@@ -382,19 +376,19 @@ $text-dark: #121212;
     padding: 8px 16px;
     text-decoration: none;
     font-weight: bold;
-    border: 2px solid $accent;
+    border: 2px solid #d4af37;
     border-radius: 4px;
-    color: $accent;
+    color: #d4af37;
     transition: background-color 0.3s, color 0.3s;
 
     &:hover {
-      background-color: $accent;
-      color: $bg-dark;
+      background-color: #d4af37;
+      color: #121212;
     }
 
     &.btn-scrolled {
-      border-color: $text-dark;
-      color: $text-dark;
+      border-color: #121212;
+      color: #121212;
     }
   }
 }
@@ -409,7 +403,7 @@ $text-dark: #121212;
   background-color: transparent;
 
   &.scrolled-app-bar-line {
-    background-color: $accent;
+    background-color: #d4af37;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   }
 }
