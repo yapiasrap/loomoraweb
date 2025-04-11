@@ -45,7 +45,11 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
     role="navigation"
     aria-label="Mobile Navigation"
   >
-    <img src="/logo/4.png" alt="Logo" height="50" />
+    <img
+      src="https://images.perkasaracking.co.id/logo/3323bb53-abcc-4446-6601-552dfdb5b800/logoxs"
+      alt="Logo"
+      height="50"
+    />
     <hr class="divider" />
     <ul class="menu">
       <li
@@ -85,7 +89,11 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
     <!-- VERSI MOBILE -->
     <div class="mobile-header mobile-only">
       <div class="mobile-container">
-        <img src="/logo/2.png" alt="Logo" height="50" />
+        <img
+          src="https://images.perkasaracking.co.id/logo/55645e48-a03d-4ca8-9233-9f56341e3400/logoxs"
+          alt="Logo"
+          height="50"
+        />
         <button
           @click.stop="state.drawer = !state.drawer"
           class="menu-toggle"
@@ -102,7 +110,11 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
         <!-- Logo -->
         <div class="nav-left">
           <img
-            :src="isScrolled ? '/logo/2.png' : '/logo/4.png'"
+            :src="
+              isScrolled
+                ? 'https://images.perkasaracking.co.id/logo/55645e48-a03d-4ca8-9233-9f56341e3400/logoxs'
+                : 'https://images.perkasaracking.co.id/logo/3323bb53-abcc-4446-6601-552dfdb5b800/logoxs'
+            "
             alt="Logo"
             :height="isScrolled ? '60' : '60'"
           />
