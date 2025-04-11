@@ -532,7 +532,7 @@ const banner = { judul: "Karpet Roll Masjid" };
         margin-right: 0.5rem;
       }
       &:hover {
-        background-color: darken(#d4af37, 8%);
+        background-color: #d4af37;
       }
     }
   }
