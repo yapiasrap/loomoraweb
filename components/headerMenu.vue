@@ -23,7 +23,7 @@ const state = reactive({
         { title: "Karpet Tile", to: "/produk/karpet-tile" },
       ],
     },
-    { title: "PROJEK", to: "/projek" },
+    { title: "PROJEK", to: "/kontak" },
     { title: "KONTAK", to: "/kontak" },
   ],
 });
@@ -248,7 +248,7 @@ $text-dark: #121212;
     transition: background-color 0.3s;
 
     &:hover {
-      background-color: lighten($color: #000000, $amount: 0);
+      background-color: lighten;
     }
   }
 }
