@@ -4,37 +4,42 @@ const products = [
     name: "Sentuhan Beludru",
     series: "Koleksi Premium",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F3.jpeg?alt=media&token=8fd4a626-9cf6-4eac-9119-e6bdc9f75dca",
+      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/kotak300",
   },
+
   {
     name: "Pasir Sahara",
     series: "Seri Alam",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F4.jpeg?alt=media&token=568d0b1f-5f2d-40cb-a4be-e4101f10bc83",
+      "https://images.perkasaracking.co.id/images/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/kotak300",
   },
+
   {
     name: "Cahaya Keemasan",
     series: "Lini Eksklusif",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F5.jpeg?alt=media&token=99093ffe-47a1-40e1-bd50-b715c223914d",
+      "https://images.perkasaracking.co.id/images/a73f434a-e444-4af4-41db-fe9fd3828f00/kotak300",
   },
+
   {
     name: "Putih Nordik",
     series: "Nuansa Skandinavia",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F1.jpeg?alt=media&token=9feab4ff-a7bf-44e1-a8dd-3071cd879a71",
+      "https://images.perkasaracking.co.id/images/ce24d606-aa84-45a7-8306-461a79106c00/kotak300",
   },
+
   {
     name: "Kabut Perkotaan",
     series: "Seri Modern",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F2.jpeg?alt=media&token=75eab2cf-d47e-4156-8117-ef0190bbe6de",
+      "https://images.perkasaracking.co.id/images/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/kotak300",
   },
+
   {
     name: "Hutan Zamrud",
     series: "Seri Alam",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F6.jpeg?alt=media&token=f0aa2e24-dc1f-4a05-98d9-3227f4d84c5f",
+      "https://images.perkasaracking.co.id/images/f09b8dbb-e9e6-4fb0-40cc-e8e33029a300/kotak300",
   },
 ];
 </script>

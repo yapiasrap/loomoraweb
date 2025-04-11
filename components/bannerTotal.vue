@@ -53,7 +53,7 @@
 .parallax {
   position: relative;
   height: 400px;
-  background: url("/images/project/8.jpeg") center center/cover no-repeat;
+  background: url("https://images.perkasaracking.co.id/images/8302c47a-ca8c-46d7-867f-e82bfcf0f000/heromobile") center center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

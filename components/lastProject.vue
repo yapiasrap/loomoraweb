@@ -1,3 +1,31 @@
+<script setup>
+const projects = [
+  {
+    title: "Ballroom - Hotel Mulia, Jakarta",
+    subtitle: "Karpet Ballroom",
+    image:
+      "https://images.perkasaracking.co.id/images/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/kotak300",
+    alt: "Karpet Ballroom dengan desain elegan",
+  },
+
+  {
+    title: "Kantor - Menara Astra, Jakarta",
+    subtitle: "Karpet Kantor",
+    image:
+      "https://images.perkasaracking.co.id/images/841a560e-bd9b-4b50-9dd3-9594d3ed2100/kotak300",
+    alt: "Karpet kantor dengan desain modern",
+  },
+
+  {
+    title: "Aula Kampus - UIN Jakarta",
+    subtitle: "Karpet Ruang Kuliah",
+    image:
+      "https://images.perkasaracking.co.id/images/78468be4-c4fa-4aef-ed59-b9036cf57a00/kotak300",
+    alt: "Karpet ruang kuliah di UIN Jakarta",
+  },
+];
+</script>
+
 <template>
   <a-container class="last-projects">
     <!-- Title Section -->
@@ -34,32 +62,6 @@
     </a-row>
   </a-container>
 </template>
-
-<script setup>
-const projects = [
-  {
-    title: "Ballroom - Hotel Mulia, Jakarta",
-    subtitle: "Karpet Ballroom",
-    image:
-      "https://storage.googleapis.com/a1aa/image/1Yu3YWLWBGKSAxsGZ7lo3geeZzdofLblWP0XQy0UqLESVsEoA.jpg",
-    alt: "Karpet Ballroom dengan desain elegan",
-  },
-  {
-    title: "Kantor - Menara Astra, Jakarta",
-    subtitle: "Karpet Kantor",
-    image:
-      "https://storage.googleapis.com/a1aa/image/PhKNezsBEh1FdCvG45NNl18NJHcebivf73511z2CSEqeqYJQB.jpg",
-    alt: "Karpet kantor dengan desain modern",
-  },
-  {
-    title: "Masjid - Masjid Istiqlal, Jakarta",
-    subtitle: "Karpet Masjid",
-    image:
-      "https://storage.googleapis.com/a1aa/image/E2tAGc3aa2ZHMJOlzx6MJJQEJ3wToR2VWX8QMLS22NQrilAF.jpg",
-    alt: "Karpet masjid dengan motif Islami",
-  },
-];
-</script>
 
 <style scoped lang="scss">
 /* Container khusus Last Projects */

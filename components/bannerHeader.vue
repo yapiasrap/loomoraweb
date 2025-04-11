@@ -11,7 +11,7 @@ const preloadHref = ref("");
 watchEffect(async () => {
   await nextTick();
   preloadHref.value =
-    "https://images.perkasaracking.co.id/images/b1872cc2-25b7-4a07-7219-2dc07cfc4800/herodesktop";
+    "https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/herodesktop";
 });
 
 // Tambahkan preload ke head
@@ -32,7 +32,7 @@ useHead(() => ({
     <!-- Background Image -->
     <img
       class="hero-background"
-      src="https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2F10.jpeg?alt=media&token=780a38e8-1f29-4791-a089-6875b04b03aa"
+      src="https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/herodesktop"
       alt="Custom Carpet Background"
     />
 
@@ -102,7 +102,7 @@ useHead(() => ({
     0,
     0,
     0,
-    0.5
+    0.4
   ); /* Overlay hitam dengan transparansi 50% */
   z-index: 1;
 }
