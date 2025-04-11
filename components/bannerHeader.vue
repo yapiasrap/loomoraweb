@@ -11,7 +11,7 @@ const preloadHref = ref("");
 watchEffect(async () => {
   await nextTick();
   preloadHref.value =
-    "https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/herodesktop";
+    "https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/desktop";
 });
 
 // Tambahkan preload ke head
@@ -32,7 +32,7 @@ useHead(() => ({
     <!-- Background Image -->
     <img
       class="hero-background"
-      src="https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/herodesktop"
+      src="https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/desktop"
       alt="Custom Carpet Background"
     />
 

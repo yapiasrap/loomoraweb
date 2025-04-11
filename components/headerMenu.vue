@@ -148,13 +148,13 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
         </div>
       </div>
     </div>
-  </header>
 
-  <!-- Bar bawah sebagai aksen (opsional) -->
-  <div
-    class="app-bar-line"
-    :class="{ 'scrolled-app-bar-line': isScrolled }"
-  ></div>
+    <!-- Bar bawah sebagai aksen (opsional) -->
+    <div
+      class="app-bar-line"
+      :class="{ 'scrolled-app-bar-line': isScrolled }"
+    ></div>
+  </header>
 </template>
 
 <style scoped lang="scss">
