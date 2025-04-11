@@ -19,8 +19,8 @@ defineProps<{ operandata: TopM }>();
 <template>
   <div class="image-container">
     <img
-      src="https://firebasestorage.googleapis.com/v0/b/suvarna-web.appspot.com/o/images%2Fwebsite%2Fbackground%2F2.jpg?alt=media&token=ea421f9b-58dc-4362-8d94-1eca84d6e873"
-      alt="Banner Top Rak Gudang TAP"
+      src="/images/project/11.jpeg"
+      alt="Banner Top Loomora"
       height="350px"
       class="image"
     />
@@ -64,7 +64,6 @@ defineProps<{ operandata: TopM }>();
     rgba(21, 21, 20, 0.7)
   );
 }
-
 
 .text-wrapper {
   position: absolute;
