@@ -4,9 +4,8 @@
 @use "card" as *;
 @use 'mixins' as *;
 @use 'utilities' as *;
+@use 'animation' as *;
 @use "sass:math" as *;
-
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;700&display=swap');
 
 *,
 *::before,
