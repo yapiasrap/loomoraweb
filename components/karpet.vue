@@ -1,6 +1,11 @@
 <script setup lang="ts">
 import { mdiCheckCircleOutline } from "@mdi/js";
 
+interface FeatureInfo {
+  title: string;
+  desc: string;
+}
+
 interface FeaturesM {
   images: string;
   judul: string;
@@ -10,10 +15,18 @@ interface FeaturesM {
   list_2: string;
   list_3: string;
   list_4: string;
-  info: { title: string; desc: string }[];
+  info: FeatureInfo[];
 }
 
 const props = defineProps<{ operandata: FeaturesM }>();
+
+// Buat array daftar keuntungan
+const advantageList = [
+  props.operandata.list_1,
+  props.operandata.list_2,
+  props.operandata.list_3,
+  props.operandata.list_4,
+];
 </script>
 
 <template>
@@ -27,12 +40,7 @@ const props = defineProps<{ operandata: FeaturesM }>();
         <p class="advantage-title">{{ operandata.keunggulan }}</p>
         <ul class="advantage-list">
           <li
-            v-for="(item, idx) in [
-              operandata.list_1,
-              operandata.list_2,
-              operandata.list_3,
-              operandata.list_4,
-            ]"
+            v-for="(item, idx) in advantageList"
             :key="idx"
             class="animate-on-scroll"
             v-observe
@@ -63,9 +71,9 @@ const props = defineProps<{ operandata: FeaturesM }>();
     <section class="info-section">
       <div class="info-grid">
         <div
-          class="info-card animate-on-scroll"
           v-for="(item, idx) in operandata.info"
           :key="idx"
+          class="info-card animate-on-scroll"
           v-observe
         >
           <h3 class="info-title">{{ item.title }}</h3>
@@ -83,21 +91,19 @@ const props = defineProps<{ operandata: FeaturesM }>();
 .section-divider {
   height: 2px;
   background: #f0f0f0;
-  max-width: 100%;
+  width: 100%;
 }
 
-/* Bagian Gambar Full Width (Tidak diubah banyak) */
-.image-section {
-  img {
-    width: 100%;
-    height: 500px; /* Atur tinggi gambar sesuai kebutuhan */
-    object-fit: cover;
-    display: block;
-    border-radius: 2rem;
-  }
+/* IMAGE SECTION */
+.image-section img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+  border-radius: 2rem;
 }
 
-/* Bagian Info Tiga Kolom */
+/* INFO SECTION */
 .info-section {
   padding: 6rem 2rem;
   backdrop-filter: blur(6px);
@@ -119,7 +125,6 @@ const props = defineProps<{ operandata: FeaturesM }>();
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
     transition: all 0.4s ease;
     border: 1px solid rgba(255, 255, 255, 0.18);
-    position: relative;
 
     &:hover {
       transform: translateY(-12px);
@@ -127,31 +132,20 @@ const props = defineProps<{ operandata: FeaturesM }>();
     }
 
     .info-title {
-      font-size: 1.4rem;
-      font-weight: 700;
+      font: 700 1.4rem "Montserrat", sans-serif;
       color: #2a2a2a;
       margin-bottom: 1rem;
-      font-family: "Montserrat", sans-serif;
       position: relative;
     }
 
     .info-description {
-      font-size: 1rem;
+      font: 1rem/1.6 "Lato", sans-serif;
       color: #4a4a4a;
-      line-height: 1.6;
-      font-family: "Lato", sans-serif;
     }
   }
 }
 
-/* Responsif */
-@media (max-width: 992px) {
-  .info-cards {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-}
-
+/* TEXT SECTION */
 .text-section {
   padding: 4rem 2rem;
   text-align: left;
@@ -162,8 +156,7 @@ const props = defineProps<{ operandata: FeaturesM }>();
   }
 
   .feature-label {
-    font-size: 0.9rem;
-    font-weight: 600;
+    font: 600 0.9rem sans-serif;
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #8e8e8e;
@@ -171,42 +164,38 @@ const props = defineProps<{ operandata: FeaturesM }>();
   }
 
   .title {
-    font-size: 3rem;
-    font-weight: 700;
+    font: 700 3rem sans-serif;
     color: #2a2a2a;
     margin-bottom: 1.5rem;
-    position: relative;
     line-height: 1.2;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.08);
+    position: relative;
 
     &::after {
       content: "";
+      position: absolute;
+      bottom: -12px;
+      left: 0;
       width: 70px;
       height: 4px;
-      background-color: #c59d5f;
-      position: absolute;
-      left: 0;
-      bottom: -12px;
+      background: #c59d5f;
       border-radius: 2px;
-      transition: width 0.3s ease;
+      transition: width 0.3s;
     }
-
     &:hover::after {
       width: 100px;
     }
   }
 
   .description {
-    font-size: 1.2rem;
-    line-height: 1.8;
+    font: 1.2rem/1.8 sans-serif;
     color: #4a4a4a;
     margin-bottom: 2rem;
     padding-right: 1rem;
   }
 
   .advantage-title {
-    font-size: 1.5rem;
-    font-weight: 600;
+    font: 600 1.5rem sans-serif;
     color: #2a2a2a;
     margin-bottom: 1rem;
     padding-left: 1rem;
@@ -215,8 +204,8 @@ const props = defineProps<{ operandata: FeaturesM }>();
 
   .advantage-list {
     list-style: none;
-    padding: 0;
     margin: 0;
+    padding: 0;
 
     li {
       display: flex;
@@ -224,23 +213,27 @@ const props = defineProps<{ operandata: FeaturesM }>();
       font-size: 1.125rem;
       color: #2a2a2a;
       margin-bottom: 0.75rem;
-      transition: all 0.3s ease;
+      transition: transform 0.3s;
 
-      i {
-        font-size: 1.5rem;
-        color: #c59d5f;
+      svg {
         margin-right: 0.75rem;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s;
       }
 
       &:hover {
         transform: translateX(6px);
-
-        i {
+        svg {
           transform: scale(1.1);
         }
       }
     }
+  }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+  .info-grid {
+    grid-template-columns: 1fr;
   }
 }
 
@@ -251,7 +244,6 @@ const props = defineProps<{ operandata: FeaturesM }>();
 
     .title {
       font-size: 2.5rem;
-
       &::after {
         left: 50%;
         transform: translateX(-50%);
@@ -264,11 +256,11 @@ const props = defineProps<{ operandata: FeaturesM }>();
     }
 
     .advantage-title {
-      font-size: 1.3rem;
       border-left: none;
       border-bottom: 2px solid #c59d5f;
-      padding: 0 0 0.5rem;
+      padding-bottom: 0.5rem;
       margin-bottom: 1rem;
+      font-size: 1.3rem;
     }
 
     .advantage-list li {

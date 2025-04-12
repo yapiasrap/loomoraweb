@@ -78,29 +78,23 @@ const isMdAndUp = computed(() => width.value >= 960);
               <div class="divider"></div>
               <ul class="footer-links">
                 <li>
-                  <a href="/produk/karpet/roll-masjid"> Karpet Roll Masjid </a>
+                  <a href="/karpet/roll-masjid"> Karpet Roll Masjid </a>
                 </li>
 
                 <li>
-                  <a href="/produk/karpet/custom-ballroom">
-                    Karpet Custom Ballroom
-                  </a>
+                  <a href="/karpet/custom-ballroom"> Karpet Custom Ballroom </a>
                 </li>
 
                 <li>
-                  <a href="/produk/karpet/custom-masjid">
-                    Karpet Custom Masjid
-                  </a>
+                  <a href="/karpet/custom-masjid"> Karpet Custom Masjid </a>
                 </li>
 
                 <li>
-                  <a href="/produk/karpet/custom-kantor">
-                    Karpet Custom Kantor
-                  </a>
+                  <a href="/karpet/custom-kantor"> Karpet Custom Kantor </a>
                 </li>
 
                 <li>
-                  <a href="/produk/karpet/tile"> Karpet Tile </a>
+                  <a href="/karpet/tile"> Karpet Tile </a>
                 </li>
               </ul>
             </a-col>
@@ -283,4 +277,3 @@ const isMdAndUp = computed(() => width.value >= 960);
   opacity: 0;
 }
 </style>
-
