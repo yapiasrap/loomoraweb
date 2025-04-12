@@ -107,7 +107,7 @@ const isMdAndUp = computed(() => width.value >= 960);
 
             <a-col class="col-12 col-sm-4 text-center">
               <img
-                src="https://images.perkasaracking.co.id/logo/9b8c7f67-1493-44e1-3fff-23bd51661b00/logoxs"
+                src="https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/9b8c7f67-1493-44e1-3fff-23bd51661b00/mobile"
                 alt="logo Loomora"
                 height="150"
                 class="mx-auto d-block"
@@ -283,3 +283,4 @@ const isMdAndUp = computed(() => width.value >= 960);
   opacity: 0;
 }
 </style>
+

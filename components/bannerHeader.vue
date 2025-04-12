@@ -3,6 +3,21 @@ import { useHead } from "#imports";
 import { ref, watchEffect, nextTick, computed } from "vue";
 import { useWindowSize } from "@vueuse/core";
 
+const isMobile = ref(false);
+
+const checkScreen = () => {
+  isMobile.value = window.innerWidth < 768; // bisa disesuaikan breakpoint-nya
+};
+
+onMounted(() => {
+  checkScreen();
+  window.addEventListener("resize", checkScreen);
+});
+
+onUnmounted(() => {
+  window.removeEventListener("resize", checkScreen);
+});
+
 const { width } = useWindowSize();
 const isMdAndUp = computed(() => width.value >= 600);
 
@@ -11,7 +26,7 @@ const preloadHref = ref("");
 watchEffect(async () => {
   await nextTick();
   preloadHref.value =
-    "https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/desktop";
+    "https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/heromobile";
 });
 
 // Tambahkan preload ke head
@@ -28,12 +43,12 @@ useHead(() => ({
 </script>
 
 <template>
-  <section class="hero-section">
+  <section class="hero-section" v-if="!isMobile">
     <!-- Background Image -->
     <img
       class="hero-background"
       src="https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/desktop"
-      alt="Custom Carpet Background"
+      alt="Loomora Carpet Custom"
     />
 
     <!-- Overlay untuk memperjelas teks -->
@@ -42,24 +57,47 @@ useHead(() => ({
     <!-- Konten teks -->
     <div class="hero-content">
       <p
-        :class="isMdAndUp ? 'hero-company' : 'hero-company-mobile text-center'"
+        class="hero-company"
       >
-      Hadirkan Karpet Premium Impian Anda
+        Hadirkan Karpet Premium Impian Anda
       </p>
 
       <h1
-        :class="
-          isMdAndUp ? 'hero-headline' : 'hero-headline-mobile text-center'
-        "
+        class="hero-headline"
       >
         SENTUHAN KEMEWAHAN DI SETIAP LANGKAH
       </h1>
 
       <p
-        :class="
-          isMdAndUp ? 'hero-description' : 'hero-description-mobile text-center'
-        "
+        class="hero-description"
       >
+        Lebih dari sekadar pelengkap interior, setiap karpet kami adalah karya
+        eksklusif yang memadukan keindahan desain, kualitas terbaik, dan
+        sentuhan kemewahan untuk menyempurnakan ruang Anda.
+      </p>
+    </div>
+  </section>
+
+  <!-- MOBILE  -->
+  <section class="hero-section" v-if="isMobile">
+    <img
+      class="hero-background"
+      src="https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/tablet"
+      alt="Loomora Carpet Custom"
+    />
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+      <p class="hero-company-mobile text-center">
+        Hadirkan Karpet Premium Impian Anda
+      </p>
+
+      <h1 class="hero-headline-mobile text-center">
+        SENTUHAN KEMEWAHAN DI SETIAP LANGKAH
+      </h1>
+
+      <p class="hero-description-mobile text-center">
         Lebih dari sekadar pelengkap interior, setiap karpet kami adalah karya
         eksklusif yang memadukan keindahan desain, kualitas terbaik, dan
         sentuhan kemewahan untuk menyempurnakan ruang Anda.
