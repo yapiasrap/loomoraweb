@@ -1,11 +1,105 @@
 <script setup>
-import {
-  mdiCheckboxMarkedCircleOutline,
-  mdiCartOutline,
-  mdiEmailOutline,
-} from "@mdi/js";
+import { mdiCheckboxMarkedCircleOutline } from "@mdi/js";
 
 const banner = { judul: "Karpet Roll Masjid" };
+
+const products = [
+  {
+    id: 1,
+    title: "Grade Super Premium",
+    priceOld: "Rp. 9,3 Jt",
+    priceNew: "Rp. 9.000.000",
+    details: [
+      "Bahan: Polypropylene",
+      "Motif: Polos & Full Motif",
+      "Warna: Merah & Hijau",
+      "Ukuran: 120 x 600 cm",
+      "Tebal: 24 mm",
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F7.jpeg?alt=media&token=4d6947be-b187-4882-b3d9-adeed2973443",
+  },
+
+  {
+    id: 2,
+    title: "Grade Premium",
+    priceOld: "Rp. 6,1 Jt",
+    priceNew: "Rp. 6.000.000",
+    details: [
+      "Bahan: Polypropylene",
+      "Motif: Polos & Bintik",
+      "Warna: Merah & Hijau",
+      "Ukuran: 120 x 600 cm",
+      "Tebal: 22 mm",
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F9.jpeg?alt=media&token=36b8f223-0d19-4e9f-a6bd-810d54b9112f",
+  },
+
+  {
+    id: 3,
+    title: "Grade Super",
+    priceOld: "Rp. 5,1 Jt",
+    priceNew: "Rp. 5.000.000",
+    details: [
+      "Bahan: Polypropylene",
+      "Motif: Polos, Bintik, Love, Minimalis & Bunga",
+      "Warna: Merah & Hijau",
+      "Ukuran: 120 x 600 cm",
+      "Tebal: 17 mm",
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F11.jpeg?alt=media&token=c3193dde-c0af-47f6-9516-047de30fee3a",
+  },
+
+  {
+    id: 4,
+    title: "Grade A",
+    priceOld: "Rp. 6,1 Jt",
+    priceNew: "Rp. 6.000.000",
+    details: [
+      "Bahan: Polypropylene",
+      "Motif: Polos, Bintik & Bunga",
+      "Warna: Merah & Hijau",
+      "Ukuran: 120 x 600 cm",
+      "Tebal: 22 mm",
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F3.jpeg?alt=media&token=8fd4a626-9cf6-4eac-9119-e6bdc9f75dca",
+  },
+
+  {
+    id: 5,
+    title: "Grade B",
+    priceOld: "Rp. 3,7 Jt",
+    priceNew: "Rp. 3.500.000",
+    details: [
+      "Bahan: Polypropylene",
+      "Motif: Polos",
+      "Warna: Merah & Hijau",
+      "Ukuran: 120 x 600 cm",
+      "Tebal: 13-14 mm",
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F4.jpeg?alt=media&token=568d0b1f-5f2d-40cb-a4be-e4101f10bc83",
+  },
+
+  {
+    id: 6,
+    title: "Grade C",
+    priceOld: "Rp. 2,2 Jt",
+    priceNew: "Rp. 2.000.000",
+    details: [
+      "Bahan: Polypropylene",
+      "Motif: Polos, Bintik, Love, Minimalis & Bunga",
+      "Warna: Merah & Hijau",
+      "Ukuran: 120 x 600 cm",
+      "Tebal: 11-12 mm",
+    ],
+    image:
+      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F5.jpeg?alt=media&token=99093ffe-47a1-40e1-bd50-b715c223914d",
+  },
+];
 </script>
 
 <template>
@@ -19,7 +113,6 @@ const banner = { judul: "Karpet Roll Masjid" };
       <span class="dot"></span>
       <span class="line"></span>
     </div>
-
     <p>
       Kami siap membantu menghadirkan karpet roll masjid yang nyaman, estetis,
       <br />
@@ -28,352 +121,60 @@ const banner = { judul: "Karpet Roll Masjid" };
   </div>
 
   <div class="luxury-grid">
-    <div class="lux-row mt-20">
-      <div
-        class="lux-col image"
-        :style="{
-          backgroundImage:
-            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F7.jpeg?alt=media&token=4d6947be-b187-4882-b3d9-adeed2973443)',
-        }"
-      ></div>
-      <div class="lux-col info">
-        <div class="info-inner">
-          <p class="category">KATEGORI</p>
-          <h2 class="title">Grade Super Premium</h2>
-          <div class="price">
-            <span class="price-old">Rp. 9,3 Jt</span>
-            <span class="price-new">Rp. 9.000.000</span>
+    <div v-for="(product, index) in products" :key="product.id" class="lux-row">
+      <!-- Alternatif tampilan: baris genap tampilkan gambar di kiri, baris ganjil di kanan -->
+      <template v-if="index % 2 === 0">
+        <div
+          class="lux-col image"
+          :style="{ backgroundImage: `url(${product.image})` }"
+        ></div>
+        <div class="lux-col info">
+          <div class="info-inner">
+            <p class="category">KATEGORI</p>
+            <h2 class="title">{{ product.title }}</h2>
+            <div class="price">
+              <span class="price-old">{{ product.priceOld }}</span>
+              <span class="price-new">{{ product.priceNew }}</span>
+            </div>
+            <ul class="details">
+              <li v-for="(detail, i) in product.details" :key="i">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path :d="mdiCheckboxMarkedCircleOutline" />
+                </svg>
+                <span>{{ detail }}</span>
+              </li>
+            </ul>
+            <a-button id="pesan_sekarang" text="Pesan Sekarang" />
           </div>
-          <ul class="details">
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Bahan: Polypropylene</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Motif: Polos &amp; Full Motif</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Warna: Merah &amp; Hijau</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Ukuran: 120 x 600 cm</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Tebal: 24 mm</span>
-            </li>
-          </ul>
-          <button class="btn-order">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path :d="mdiCartOutline" />
-            </svg>
-            Pesan Sekarang
-          </button>
         </div>
-      </div>
-    </div>
+      </template>
 
-    <div class="lux-row">
-      <div class="lux-col info">
-        <div class="info-inner">
-          <p class="category">KATEGORI</p>
-          <h2 class="title">Grade Premium</h2>
-          <div class="price">
-            <span class="price-old">Rp. 6,1 Jt</span>
-            <span class="price-new">Rp. 6.000.000</span>
-          </div>
-          <ul class="details">
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Bahan: Polypropylene</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Motif: Polos &amp; Bintik</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Warna: Merah &amp; Hijau</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Ukuran: 120 x 600 cm</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Tebal: 22 mm</span>
-            </li>
-          </ul>
-          <button class="btn-order">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path :d="mdiCartOutline" />
-            </svg>
-            Pesan Sekarang
-          </button>
-        </div>
-      </div>
-      <div
-        class="lux-col image"
-        :style="{
-          backgroundImage:
-            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F9.jpeg?alt=media&token=36b8f223-0d19-4e9f-a6bd-810d54b9112f)',
-        }"
-      ></div>
-    </div>
+      <template v-else>
+        <div class="lux-col info">
+          <div class="info-inner">
+            <p class="category">KATEGORI</p>
+            <h2 class="title">{{ product.title }}</h2>
+            <div class="price">
+              <span class="price-old">{{ product.priceOld }}</span>
+              <span class="price-new">{{ product.priceNew }}</span>
+            </div>
+            <ul class="details">
+              <li v-for="(detail, i) in product.details" :key="i">
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path :d="mdiCheckboxMarkedCircleOutline" />
+                </svg>
+                <span>{{ detail }}</span>
+              </li>
+            </ul>
 
-    <div class="lux-row">
-      <div
-        class="lux-col image"
-        :style="{
-          backgroundImage:
-            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F11.jpeg?alt=media&token=c3193dde-c0af-47f6-9516-047de30fee3a)',
-        }"
-      ></div>
-      <div class="lux-col info">
-        <div class="info-inner">
-          <p class="category">KATEGORI</p>
-          <h2 class="title">Grade Super</h2>
-          <div class="price">
-            <span class="price-old">Rp. 5,1 Jt</span>
-            <span class="price-new">Rp. 5.000.000</span>
+            <a-button id="pesan_sekarang" text="Pesan Sekarang" />
           </div>
-          <ul class="details">
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Bahan: Polypropylene</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Motif: Polos, Bintik, Love, Minimalis &amp; Bunga</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Warna: Merah &amp; Hijau</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Ukuran: 120 x 600 cm</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Tebal: 17 mm</span>
-            </li>
-          </ul>
-          <button class="btn-order">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path :d="mdiCartOutline" />
-            </svg>
-            Pesan Sekarang
-          </button>
         </div>
-      </div>
-    </div>
-
-    <div class="lux-row">
-      <div class="lux-col info">
-        <div class="info-inner">
-          <p class="category">KATEGORI</p>
-          <h2 class="title">Grade A</h2>
-          <div class="price">
-            <span class="price-old">Rp. 6,1 Jt</span>
-            <span class="price-new">Rp. 6.000.000</span>
-          </div>
-          <ul class="details">
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Bahan: Polypropylene</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Motif: Polos, Bintik &amp; Bunga</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Warna: Merah &amp; Hijau</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Ukuran: 120 x 600 cm</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Tebal: 22 mm</span>
-            </li>
-          </ul>
-          <button class="btn-order">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path :d="mdiCartOutline" />
-            </svg>
-            Pesan Sekarang
-          </button>
-        </div>
-      </div>
-      <div
-        class="lux-col image"
-        :style="{
-          backgroundImage:
-            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F3.jpeg?alt=media&token=8fd4a626-9cf6-4eac-9119-e6bdc9f75dca)',
-        }"
-      ></div>
-    </div>
-
-    <div class="lux-row">
-      <div
-        class="lux-col image"
-        :style="{
-          backgroundImage:
-            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F4.jpeg?alt=media&token=568d0b1f-5f2d-40cb-a4be-e4101f10bc83)',
-        }"
-      ></div>
-      <div class="lux-col info">
-        <div class="info-inner">
-          <p class="category">KATEGORI</p>
-          <h2 class="title">Grade B</h2>
-          <div class="price">
-            <span class="price-old">Rp. 3,7 Jt</span>
-            <span class="price-new">Rp. 3.500.000</span>
-          </div>
-          <ul class="details">
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Bahan: Polypropylene</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Motif: Polos</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Warna: Merah &amp; Hijau</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Ukuran: 120 x 600 cm</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Tebal: 13-14 mm</span>
-            </li>
-          </ul>
-          <button class="btn-order">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path :d="mdiCartOutline" />
-            </svg>
-            Pesan Sekarang
-          </button>
-        </div>
-      </div>
-    </div>
-
-    <div class="lux-row">
-      <div class="lux-col info">
-        <div class="info-inner">
-          <p class="category">KATEGORI</p>
-          <h2 class="title">Grade C</h2>
-          <div class="price">
-            <span class="price-old">Rp. 2,2 Jt</span>
-            <span class="price-new">Rp. 2.000.000</span>
-          </div>
-          <ul class="details">
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Bahan: Polypropylene</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Motif: Polos, Bintik, Love, Minimalis &amp; Bunga</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Warna: Merah &amp; Hijau</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Ukuran: 120 x 600 cm</span>
-            </li>
-            <li>
-              <svg class="icon" viewBox="0 0 24 24">
-                <path :d="mdiCheckboxMarkedCircleOutline" />
-              </svg>
-              <span>Tebal: 11-12 mm</span>
-            </li>
-          </ul>
-          <button class="btn-order">
-            <svg class="icon" viewBox="0 0 24 24">
-              <path :d="mdiCartOutline" />
-            </svg>
-            Pesan Sekarang
-          </button>
-        </div>
-      </div>
-      <div
-        class="lux-col image"
-        :style="{
-          backgroundImage:
-            'url(https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F5.jpeg?alt=media&token=99093ffe-47a1-40e1-bd50-b715c223914d)',
-        }"
-      ></div>
+        <div
+          class="lux-col image"
+          :style="{ backgroundImage: `url(${product.image})` }"
+        ></div>
+      </template>
     </div>
   </div>
 </template>
@@ -409,7 +210,6 @@ const banner = { judul: "Karpet Roll Masjid" };
   margin-bottom: 0.5rem;
   color: #333;
   position: relative;
-  /* Garis bawah menggunakan pseudo-element */
   &::after {
     content: "";
     display: block;
@@ -420,7 +220,6 @@ const banner = { judul: "Karpet Roll Masjid" };
   }
 }
 
-/* Layout dan style utama */
 .luxury-grid {
   color: #444;
   background: #fafafa;
@@ -431,7 +230,6 @@ const banner = { judul: "Karpet Roll Masjid" };
     flex-wrap: wrap;
     margin: 2rem 0;
     align-items: stretch;
-    /* Membuat jarak antar row */
 
     .lux-col {
       width: 100%;
@@ -444,8 +242,6 @@ const banner = { judul: "Karpet Roll Masjid" };
       &.image {
         background-size: cover;
         background-position: center;
-        position: relative;
-        /* Tidak ada efek hover, namun style gambarnya dibuat lebih bersih */
         filter: brightness(0.95);
       }
 
@@ -512,33 +308,9 @@ const banner = { judul: "Karpet Roll Masjid" };
         }
       }
     }
-
-    .btn-order {
-      background-color: #d4af37;
-      color: #fff;
-      border: none;
-      padding: 0.75rem 1.5rem;
-      font-size: 1rem;
-      font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      display: inline-flex;
-      align-items: center;
-      transition: background 0.3s ease;
-      svg.icon {
-        width: 20px;
-        height: 20px;
-        fill: #fff;
-        margin-right: 0.5rem;
-      }
-      &:hover {
-        background-color: #d4af37;
-      }
-    }
   }
 }
 
-/* Responsive Styles */
 @media (min-width: 768px) {
   .luxury-grid {
     padding: 2rem 3rem;
