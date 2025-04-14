@@ -17,7 +17,7 @@ const products = [
       "Tebal: 24 mm",
     ],
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F7.jpeg?alt=media&token=4d6947be-b187-4882-b3d9-adeed2973443",
+      "https://images.perkasaracking.co.id/images/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/herotablet",
   },
 
   {
@@ -33,7 +33,7 @@ const products = [
       "Tebal: 22 mm",
     ],
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F9.jpeg?alt=media&token=36b8f223-0d19-4e9f-a6bd-810d54b9112f",
+      "https://images.perkasaracking.co.id/images/0e75b034-fbef-4420-6591-4fa41008a900/herotablet",
   },
 
   {
@@ -49,7 +49,7 @@ const products = [
       "Tebal: 17 mm",
     ],
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F11.jpeg?alt=media&token=c3193dde-c0af-47f6-9516-047de30fee3a",
+      "https://images.perkasaracking.co.id/images/e26d0d5d-2c0b-4226-0044-3e52b1f1e100/herotablet",
   },
 
   {
@@ -65,7 +65,7 @@ const products = [
       "Tebal: 22 mm",
     ],
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F3.jpeg?alt=media&token=8fd4a626-9cf6-4eac-9119-e6bdc9f75dca",
+      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/herotablet",
   },
 
   {
@@ -81,7 +81,7 @@ const products = [
       "Tebal: 13-14 mm",
     ],
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F4.jpeg?alt=media&token=568d0b1f-5f2d-40cb-a4be-e4101f10bc83",
+      "https://images.perkasaracking.co.id/images/5c4d0cf5-f34d-425e-3d86-2144a0c9af00/herotablet",
   },
 
   {
@@ -97,7 +97,7 @@ const products = [
       "Tebal: 11-12 mm",
     ],
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F5.jpeg?alt=media&token=99093ffe-47a1-40e1-bd50-b715c223914d",
+      "https://images.perkasaracking.co.id/images/78468be4-c4fa-4aef-ed59-b9036cf57a00/herotablet",
   },
 ];
 </script>

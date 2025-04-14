@@ -4,7 +4,7 @@ const banner = { judul: "Karpet Custom Kantor" };
 const karpetData = {
   judul: "Sentuhan Profesional untuk Ruang Kerja Anda",
   images:
-    "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F18.jpeg?alt=media&token=c41b5049-df8d-4938-9025-8ccbc6504c41",
+    "https://images.perkasaracking.co.id/images/841a560e-bd9b-4b50-9dd3-9594d3ed2100/desktop",
   deskripsi:
     "Karpet Custom Kantor adalah solusi sempurna untuk memberikan kenyamanan dan estetika pada ruang kantor Anda. Dengan bahan berkualitas tinggi, karpet ini dapat disesuaikan dengan desain interior kantor serta menciptakan suasana yang profesional dan nyaman.",
   keunggulan: "Karpet ini cocok digunakan di berbagai area kantor seperti:",

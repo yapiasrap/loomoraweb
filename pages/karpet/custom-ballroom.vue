@@ -4,7 +4,7 @@ const banner = { judul: "Karpet Custom Ballroom" };
 const karpetData = {
   judul: "Kualitas Terbaik untuk Setiap Acara",
   images:
-    "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F18.jpeg?alt=media&token=c41b5049-df8d-4938-9025-8ccbc6504c41",
+    "https://images.perkasaracking.co.id/images/08dc9ff1-811a-4ee2-fd70-3ebea4ceea00/herotablet",
   deskripsi:
     "Karpet Custom Ballroom merupakan karpet khusus dengan ukuran besar yang menjadi elemen penting untuk digunakan di ruangan ballroom atau aula besar. Dibuat dengan desain khusus dan bahan berkualitas tinggi, karpet ini menjadi cocok untuk di custom sesuai kebutuhan dan tema acara Anda.",
   keunggulan: "Karpet ini biasa digunakan di berbagai acara, seperti:",
