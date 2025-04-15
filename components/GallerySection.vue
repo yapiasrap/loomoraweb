@@ -4,42 +4,42 @@ const products = [
     name: "Sentuhan Beludru",
     series: "Koleksi Premium",
     image:
-      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/bfde99e0-d554-4509-416c-6881e792d600/kotak300",
   },
 
   {
     name: "Pasir Sahara",
     series: "Seri Alam",
     image:
-      "https://images.perkasaracking.co.id/images/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/kotak300",
   },
 
   {
     name: "Cahaya Keemasan",
     series: "Lini Eksklusif",
     image:
-      "https://images.perkasaracking.co.id/images/a73f434a-e444-4af4-41db-fe9fd3828f00/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/a73f434a-e444-4af4-41db-fe9fd3828f00/kotak300",
   },
 
   {
     name: "Putih Nordik",
     series: "Nuansa Skandinavia",
     image:
-      "https://images.perkasaracking.co.id/images/ce24d606-aa84-45a7-8306-461a79106c00/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/ce24d606-aa84-45a7-8306-461a79106c00/kotak300",
   },
 
   {
     name: "Kabut Perkotaan",
     series: "Seri Modern",
     image:
-      "https://images.perkasaracking.co.id/images/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/kotak300",
   },
 
   {
     name: "Hutan Zamrud",
     series: "Seri Alam",
     image:
-      "https://images.perkasaracking.co.id/images/f09b8dbb-e9e6-4fb0-40cc-e8e33029a300/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/f09b8dbb-e9e6-4fb0-40cc-e8e33029a300/kotak300",
   },
 ];
 </script>

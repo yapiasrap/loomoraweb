@@ -19,7 +19,7 @@ defineProps<{ operandata: TopM }>();
 <template>
   <div class="image-container">
     <img
-      src="https://images.perkasaracking.co.id/images/030930ac-578b-49c2-7b3b-75a1fda5b200/desktop"
+      src="https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/030930ac-578b-49c2-7b3b-75a1fda5b200/desktop"
       alt="Banner Top Loomora"
       height="350px"
       class="image"

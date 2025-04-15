@@ -4,7 +4,7 @@ const banner = { judul: "Karpet Custom Masjid" };
 const karpetData = {
   judul: "Meningkatkan Kenyamanan dalam Suasana Ibadah",
   images:
-    "https://images.perkasaracking.co.id/images/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/herotablet",
+    "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/herotablet",
   deskripsi:
     "Karpet Custom Masjid adalah karpet khusus yang dirancang untuk masjid dengan ukuran besar dan kenyamanan maksimal. Karpet ini terbuat dari bahan berkualitas tinggi dan dapat disesuaikan dengan kebutuhan serta tema masjid Anda.",
   keunggulan: "Karpet ini biasa digunakan di berbagai masjid untuk:",

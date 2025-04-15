@@ -26,8 +26,8 @@ const banner = { judul: "Butuh Bantuan?" };
       <!-- Left Image & Info -->
       <div class="contact-image">
         <img
-          src="https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fcarp.jpg?alt=media&token=f4ac4ac6-cf17-4aa9-b5ec-f72a90391887"
-          alt="Contact"
+          src="https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/52b89b5a-b42a-48eb-216a-83019f0c3800/mobile"
+          alt="Contact Loomora Kustom Karpet"
         />
 
         <div class="overlay">
@@ -145,7 +145,7 @@ const banner = { judul: "Butuh Bantuan?" };
   right: 0;
   background: rgba(0, 0, 0, 0.5);
   color: #fff;
-  padding: 70px;
+  padding: 75px;
   text-align: center;
 }
 

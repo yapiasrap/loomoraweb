@@ -17,41 +17,49 @@ const images = [
     text: "Ballroom Sucofindo - Jakarta",
     category: "Karpet Ballroom",
   },
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F5.jpeg?alt=media&token=99093ffe-47a1-40e1-bd50-b715c223914d",
     text: "PX Pavillion (Lippo Mall Puri)",
     category: "Karpet Ballroom",
   },
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F20.jpeg?alt=media&token=5b2525f4-1815-40f0-a600-8af92e307896",
     text: "Sentuhan Modern",
     category: "Karpet Kantor",
   },
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F2.jpeg?alt=media&token=75eab2cf-d47e-4156-8117-ef0190bbe6de",
     text: "Masjid Seskoal - Jakarta",
     category: "Karpet Masjid",
   },
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F6.jpeg?alt=media&token=f0aa2e24-dc1f-4a05-98d9-3227f4d84c5f",
     text: "Kantor Mabes Polri - Jakarta",
     category: "Karpet Kantor",
   },
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F7.jpeg?alt=media&token=4d6947be-b187-4882-b3d9-adeed2973443",
     text: "Istana Negara Yogyakarta",
     category: "Karpet Ballroom",
   },
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F13.jpeg?alt=media&token=c8f12ba2-61d4-41c5-afbc-3604753a8247",
     text: "DPRD Pamekasan Jawa Timur",
     category: "Karpet Kantor",
   },
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F9.jpeg?alt=media&token=36b8f223-0d19-4e9f-a6bd-810d54b9112f",
     text: "Universitas Islam Indonesia",
     category: "Karpet Kantor",
   },
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F12.jpeg?alt=media&token=8fb2d24d-c37f-418a-b50c-06f7b2b632b8",
     text: "Masjid Raya Kota Harapan Indah - Bekasi",
@@ -109,7 +117,7 @@ const filteredImages = computed(() => {
           alt="Gambar Proyek Karpet"
           class="project-image"
         />
-        
+
         <div class="card-overlay">
           <div class="card-text">{{ image.text }}</div>
         </div>

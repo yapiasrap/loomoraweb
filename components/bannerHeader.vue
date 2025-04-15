@@ -26,7 +26,7 @@ const preloadHref = ref("");
 watchEffect(async () => {
   await nextTick();
   preloadHref.value =
-    "https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/heromobile";
+    "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/2926867b-d990-44f1-f400-ae87ccd63600/heromobile";
 });
 
 // Tambahkan preload ke head
@@ -47,7 +47,7 @@ useHead(() => ({
     <!-- Background Image -->
     <img
       class="hero-background"
-      src="https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/desktop"
+      src="https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/2926867b-d990-44f1-f400-ae87ccd63600/desktop"
       alt="Loomora Carpet Custom"
     />
 
@@ -56,21 +56,11 @@ useHead(() => ({
 
     <!-- Konten teks -->
     <div class="hero-content">
-      <p
-        class="hero-company"
-      >
-        Hadirkan Karpet Premium Impian Anda
-      </p>
+      <p class="hero-company">Hadirkan Karpet Premium Impian Anda</p>
 
-      <h1
-        class="hero-headline"
-      >
-        SENTUHAN KEMEWAHAN DI SETIAP LANGKAH
-      </h1>
+      <h1 class="hero-headline">SENTUHAN KEMEWAHAN DI SETIAP LANGKAH</h1>
 
-      <p
-        class="hero-description"
-      >
+      <p class="hero-description">
         Lebih dari sekadar pelengkap interior, setiap karpet kami adalah karya
         eksklusif yang memadukan keindahan desain, kualitas terbaik, dan
         sentuhan kemewahan untuk menyempurnakan ruang Anda.
@@ -82,7 +72,7 @@ useHead(() => ({
   <section class="hero-section" v-if="isMobile">
     <img
       class="hero-background"
-      src="https://images.perkasaracking.co.id/images/2926867b-d990-44f1-f400-ae87ccd63600/tablet"
+      src="https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/2926867b-d990-44f1-f400-ae87ccd63600/tablet"
       alt="Loomora Carpet Custom"
     />
 

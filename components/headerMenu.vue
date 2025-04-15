@@ -24,6 +24,7 @@ const state = reactive({
       ],
     },
     { title: "PROJEK", to: "/projek" },
+    { title: "ARTIKEL", to: "/artikel" },
     { title: "KONTAK", to: "/kontak" },
   ],
 });
@@ -46,7 +47,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
     aria-label="Mobile Navigation"
   >
     <img
-      src="https://images.perkasaracking.co.id/logo/3323bb53-abcc-4446-6601-552dfdb5b800/mobile"
+      src="https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/3323bb53-abcc-4446-6601-552dfdb5b800/mobile"
       alt="Logo"
       height="50"
     />
@@ -116,8 +117,8 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
           <img
             :src="
               isScrolled
-                ? 'https://images.perkasaracking.co.id/logo/55645e48-a03d-4ca8-9233-9f56341e3400/mobile'
-                : 'https://images.perkasaracking.co.id/logo/3323bb53-abcc-4446-6601-552dfdb5b800/mobile'
+                ? 'https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/55645e48-a03d-4ca8-9233-9f56341e3400/mobile'
+                : 'https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/3323bb53-abcc-4446-6601-552dfdb5b800/logoxs'
             "
             alt="Logo"
             :height="isScrolled ? '60' : '60'"

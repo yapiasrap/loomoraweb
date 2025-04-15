@@ -17,7 +17,7 @@ const products = [
       "Tebal: 24 mm",
     ],
     image:
-      "https://images.perkasaracking.co.id/images/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/herotablet",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/herotablet",
   },
 
   {
@@ -33,7 +33,7 @@ const products = [
       "Tebal: 22 mm",
     ],
     image:
-      "https://images.perkasaracking.co.id/images/0e75b034-fbef-4420-6591-4fa41008a900/herotablet",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/0e75b034-fbef-4420-6591-4fa41008a900/herotablet",
   },
 
   {
@@ -49,7 +49,7 @@ const products = [
       "Tebal: 17 mm",
     ],
     image:
-      "https://images.perkasaracking.co.id/images/e26d0d5d-2c0b-4226-0044-3e52b1f1e100/herotablet",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/e26d0d5d-2c0b-4226-0044-3e52b1f1e100/herotablet",
   },
 
   {
@@ -65,7 +65,7 @@ const products = [
       "Tebal: 22 mm",
     ],
     image:
-      "https://images.perkasaracking.co.id/images/bfde99e0-d554-4509-416c-6881e792d600/herotablet",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/bfde99e0-d554-4509-416c-6881e792d600/herotablet",
   },
 
   {
@@ -81,7 +81,7 @@ const products = [
       "Tebal: 13-14 mm",
     ],
     image:
-      "https://images.perkasaracking.co.id/images/5c4d0cf5-f34d-425e-3d86-2144a0c9af00/herotablet",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/5c4d0cf5-f34d-425e-3d86-2144a0c9af00/herotablet",
   },
 
   {
@@ -97,7 +97,7 @@ const products = [
       "Tebal: 11-12 mm",
     ],
     image:
-      "https://images.perkasaracking.co.id/images/78468be4-c4fa-4aef-ed59-b9036cf57a00/herotablet",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/78468be4-c4fa-4aef-ed59-b9036cf57a00/herotablet",
   },
 ];
 </script>

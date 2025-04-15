@@ -4,7 +4,7 @@ const projects = [
     title: "Ballroom - Hotel Mulia, Jakarta",
     subtitle: "Karpet Ballroom",
     image:
-      "https://images.perkasaracking.co.id/images/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/kotak300",
     alt: "Karpet Ballroom dengan desain elegan",
   },
 
@@ -12,7 +12,7 @@ const projects = [
     title: "Kantor - Menara Astra, Jakarta",
     subtitle: "Karpet Kantor",
     image:
-      "https://images.perkasaracking.co.id/images/841a560e-bd9b-4b50-9dd3-9594d3ed2100/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/841a560e-bd9b-4b50-9dd3-9594d3ed2100/kotak300",
     alt: "Karpet kantor dengan desain modern",
   },
 
@@ -20,7 +20,7 @@ const projects = [
     title: "Aula Kampus - UIN Jakarta",
     subtitle: "Karpet Ruang Kuliah",
     image:
-      "https://images.perkasaracking.co.id/images/78468be4-c4fa-4aef-ed59-b9036cf57a00/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/78468be4-c4fa-4aef-ed59-b9036cf57a00/kotak300",
     alt: "Karpet ruang kuliah di UIN Jakarta",
   },
 ];
