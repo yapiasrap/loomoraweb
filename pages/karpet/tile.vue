@@ -10,7 +10,7 @@ const products = ref([
     id: 1,
     name: "Gravity",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F4.jpeg?alt=media&token=568d0b1f-5f2d-40cb-a4be-e4101f10bc83",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/bfde99e0-d554-4509-416c-6881e792d600/kotak300",
     specs: [
       "Bahan: Camifin PP",
       "Construction: Graphic Loop Pile",
@@ -32,7 +32,7 @@ const products = ref([
     id: 2,
     name: "Strand",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F7.jpeg?alt=media&token=4d6947be-b187-4882-b3d9-adeed2973443",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/kotak300",
     specs: [
       "Bahan: Fiber Acrylic",
       "Construction: Loop Pile",
@@ -55,7 +55,7 @@ const products = ref([
     id: 3,
     name: "Splash",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F10.jpeg?alt=media&token=92af62cd-0b12-4062-a3b0-92fd0755173d",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/0e75b034-fbef-4420-6591-4fa41008a900/kotak300",
     specs: [
       "Bahan: Nylon Blend",
       "Construction: Cut Pile",
@@ -77,7 +77,7 @@ const products = ref([
     id: 4,
     name: "Onyx",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F15.jpeg?alt=media&token=8d358795-f9a9-479b-913d-bbf36930517a",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/5f5c1903-37d7-46d4-777f-f2a9bdc58b00/kotak300",
     specs: [
       "Bahan: Polypropylene",
       "Construction: Tufted",
@@ -99,7 +99,7 @@ const products = ref([
     id: 5,
     name: "Omicron",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F18.jpeg?alt=media&token=c41b5049-df8d-4938-9025-8ccbc6504c41",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/kotak300",
     specs: [
       "Bahan: Wool Blend",
       "Construction: Berber Loop",
@@ -121,7 +121,7 @@ const products = ref([
     id: 6,
     name: "Zeta",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F2.jpeg?alt=media&token=75eab2cf-d47e-4156-8117-ef0190bbe6de",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/e980db61-8d4d-452f-817e-bb8ce74be700/kotak300",
     specs: [
       "Bahan: Acrylic",
       "Construction: Cut and Loop",
@@ -143,7 +143,7 @@ const products = ref([
     id: 7,
     name: "Arena",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F8.jpeg?alt=media&token=5df0c3b0-2e79-4349-a01e-c909aaeb2db7",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/5c4d0cf5-f34d-425e-3d86-2144a0c9af00/kotak300",
     specs: [
       "Bahan: Polypropylene",
       "Construction: Woven Texture",
@@ -165,7 +165,7 @@ const products = ref([
     id: 8,
     name: "Graphite",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F12.jpeg?alt=media&token=8fb2d24d-c37f-418a-b50c-06f7b2b632b8",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/78468be4-c4fa-4aef-ed59-b9036cf57a00/kotak300",
     specs: [
       "Bahan: Blend Resin",
       "Construction: Loop Pile dengan aksen Cut",
@@ -187,7 +187,7 @@ const products = ref([
     id: 9,
     name: "Clarient",
     image:
-      "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F22.jpeg?alt=media&token=4f016d06-84dd-4983-8878-e77b39de26cb",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/841a560e-bd9b-4b50-9dd3-9594d3ed2100/kotak300",
     specs: [
       "Bahan: Specialized Carpet Fiber",
       "Construction: High-Density Loop Pile",
@@ -220,7 +220,6 @@ function closeDetail() {
 </script>
 
 <template>
-  <!-- Komponen Top (misalnya header navigasi) -->
   <Top :operandata="banner" />
 
   <!-- Container Utama -->
@@ -313,10 +312,8 @@ function closeDetail() {
 
 /* Card Produk */
 .card {
-  background-color: #fff;
   border-radius: 5px;
   overflow: hidden;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
   display: flex;
@@ -324,7 +321,6 @@ function closeDetail() {
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   }
 }
 
@@ -350,7 +346,6 @@ function closeDetail() {
 }
 
 .card-content {
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   align-items: start;

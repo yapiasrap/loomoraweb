@@ -1,7 +1,5 @@
 <template>
   <div>
-    <header-menu />
-    <live-chat />
     <main>
       <NuxtPage />
     </main>

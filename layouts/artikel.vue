@@ -1,11 +1,11 @@
 <template>
   <div>
-    <header-menu />
+    <header-artikel />
     <live-chat />
     <main>
       <NuxtPage />
     </main>
     <footer-menu />
-    <CookieConsent />
+    <!-- <CookieConsent /> -->
   </div>
 </template>

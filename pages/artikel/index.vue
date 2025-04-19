@@ -81,8 +81,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <a-row>
-    <!-- Featured: Large -->
+  <a-row style="margin-top: 15rem;">
     <a-col class="col col-md-7 col-sm-12">
       <a-cards
         width="99%"
@@ -103,7 +102,6 @@ useSeoMeta({
       </a-cards>
     </a-col>
 
-    <!-- Featured: Others -->
     <a-col class="col col-md-5 col-sm-12">
       <a-cards
         width="100%"
