@@ -1,33 +1,35 @@
 <script setup>
+import { useRoute } from "vue-router";
+import { ref, computed } from "vue";
+
 const route = useRoute();
 const slug = route.params.slug;
+
+// Fetch data dari Firebase Realtime Database berdasarkan slug
 const { data, error } = await useAsyncData("article-blog", () =>
-  $fetch(`/api/artikel/${slug}`)
+  $fetch(`https://loomora-cdb63-default-rtdb.firebaseio.com/articles/${slug}.json`)
 );
 
-console.log({ slug });
-// Menggunakan computed untuk memastikan item selalu memiliki nilai (default array kosong)
-const article = computed(() => data.value); // Pastikan item tidak undefined
+// Jika data belum ada, gunakan objek kosong agar tidak error
+const article = computed(() => data.value || { content: [] });
 
-//   const { data } = await useFetch("/api/produk/cantilever/cantilever");
-//   const item = data.value;
 const banner = ref({
   judul: "DETAIL PRODUK",
 });
 
-useSeoMeta(article.value.data.seoMeta);
-useSchemaOrg(article.value.data.schemaArticle);
+// SEO & Schema bisa diaktifkan nanti jika data tersedia
+// useSeoMeta(article.value.seoMeta);
+// useSchemaOrg(article.value.schemaArticle);
 </script>
-<template>
-  <top-detail :operandata="banner" />
 
+<template>
   <div class="container mt-5">
-    {{ artikel }}
     <div class="row">
       <div class="col-12 col-md-8 col-sm-12">
         <breadcrumbs style="margin-left: -4%" />
-        <div class="container mt-2" v-if="article">
-          <div v-for="(block, index) in article.data.content" :key="index">
+        <!-- Tampilkan konten jika sudah ada -->
+        <div class="container mt-2" v-if="article && article.content">
+          <div v-for="(block, index) in article.content" :key="index">
             <template v-if="block.type === 'h1'">
               <h1>{{ block.text }}</h1>
               <div class="a-divider" />
@@ -45,17 +47,19 @@ useSchemaOrg(article.value.data.schemaArticle);
             <template v-else-if="block.type === 'ul'">
               <ul>
                 <li v-for="(item, idx) in block.items" :key="idx">
-                  {{ item }}
+                  <strong>{{ item.description }}</strong><br />
+                  {{ item.title }}
                 </li>
               </ul>
             </template>
 
             <template v-else-if="block.type === 'ol'">
-              <ul>
+              <ol>
                 <li v-for="(item, idx) in block.items" :key="idx">
-                  {{ item }}
+                  <strong>{{ item.description }}</strong><br />
+                  {{ item.title }}
                 </li>
-              </ul>
+              </ol>
             </template>
 
             <template v-else-if="block.type === 'img'">
@@ -66,38 +70,17 @@ useSchemaOrg(article.value.data.schemaArticle);
               />
             </template>
           </div>
-
-          <LazyHydration when-visible>
-            <ArticleClosingText />
-          </LazyHydration>
-
-          <LazyHydration when-visible>
-            <ReviewPelanggan />
-          </LazyHydration>
-
-          <LazyHydration when-visible>
-            <Kalkulator />
-          </LazyHydration>
-
-          <LazyHydration when-visible>
-            <ChatAi />
-          </LazyHydration>
-          <br />
         </div>
       </div>
 
       <div class="col-12 col-md-4 col-sm-12">
-        <LazyHydration when-visible>
-          <ArticleSidebar />
-        </LazyHydration>
+        <!-- Sidebar atau komponen lain bisa ditambahkan di sini -->
       </div>
     </div>
   </div>
 </template>
 
-<style lang="scss" scoped>
-@use "@/assets/article.scss"; // Import file SCSS yang sudah dibuat
-
+<style scoped>
 .a-divider {
   width: 40%;
   height: 3px;

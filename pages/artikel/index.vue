@@ -1,70 +1,71 @@
 <script setup>
 import { useWindowSize } from "@vueuse/core";
-import { computed, ref, watch } from "vue";
+import { ref, computed, watch } from "vue";
 
+definePageMeta({
+  layout: "artikel",
+});
+
+// Responsive breakpoint
 const { width } = useWindowSize();
 const isMobile = computed(() => width.value < 600);
 
-// Fetch data
-const { data, error } = await useAsyncData(
-  `article-blog`,
-  () => $fetch(`https://api.perkasaracking.co.id/data?key=articles`),
+// Fetch articles
+const { data } = await useAsyncData(
+  "article-blog",
+  () => $fetch(`https://loomora-cdb63-default-rtdb.firebaseio.com/articles.json`),
   { server: false }
 );
 
-const item = computed(() => data.value);
-
-const articleArray = computed(() => {
-  const raw = item.value?.data;
+// Normalize data into array
+const articles = computed(() => {
+  const raw = data.value;
   if (!raw) return [];
   return Array.isArray(raw) ? raw : Object.values(raw);
 });
 
-// Fungsi shuffle
-function shuffleArray(array) {
-  return array
-    .map((value) => ({ value, sort: Math.random() }))
-    .sort((a, b) => a.sort - b.sort)
-    .map(({ value }) => value);
+// Shuffle helper (Fisher–Yates)
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
 }
 
-// Simpan artikel acak hanya sekali saat pertama load
+// Select 4 random featured articles reactively
 const randomArticles = ref([]);
-
-watch(articleArray, () => {
-  if (articleArray.value.length && randomArticles.value.length === 0) {
-    randomArticles.value = shuffleArray(articleArray.value).slice(0, 4);
-  }
-});
-
-// Pagination
-const currentPage = ref(1);
-const itemsPerPage = 6;
-
-const paginatedItems = computed(() => {
-  const start = (currentPage.value - 1) * itemsPerPage;
-  const end = start + itemsPerPage;
-  return articleArray.value.slice(start, end);
-});
-
-const totalPages = computed(() =>
-  Math.ceil(articleArray.value.length / itemsPerPage)
+watch(
+  articles,
+  (val) => {
+    if (val && val.length) {
+      randomArticles.value = shuffle(val).slice(0, 4);
+    }
+  },
+  { immediate: true }
 );
 
+// Pagination state
+const currentPage = ref(1);
+const itemsPerPage = 6;
+const totalPages = computed(() =>
+  Math.ceil(articles.value.length / itemsPerPage)
+);
+const paginatedItems = computed(() => {
+  const start = (currentPage.value - 1) * itemsPerPage;
+  return articles.value.slice(start, start + itemsPerPage);
+});
+
+// Navigation handlers
 function nextPage() {
-  if (currentPage.value < totalPages.value) currentPage.value++;
+  currentPage.value = Math.min(currentPage.value + 1, totalPages.value);
 }
-
 function prevPage() {
-  if (currentPage.value > 1) currentPage.value--;
+  currentPage.value = Math.max(currentPage.value - 1, 1);
 }
 
-const banner = {
-  judul: "BLOG",
-  alttext: "Blog Rak Gudang TAP",
-};
-
-// SEO
+// SEO metadata
 useSeoMeta({
   title: "Rak Gudang Berkualitas - Solusi Penyimpanan Terbaik",
   ogTitle: "Rak Gudang Berkualitas - Solusi Penyimpanan Terbaik",
@@ -80,169 +81,135 @@ useSeoMeta({
 </script>
 
 <template>
+  <a-row>
+    <!-- Featured: Large -->
+    <a-col class="col col-md-7 col-sm-12">
+      <a-cards
+        width="99%"
+        class="image-container"
+        :to="`/artikel/${randomArticles[0]?.slug}`"
+        :elevation="0"
+      >
+        <img
+          :src="randomArticles[0]?.image"
+          class="custom-image-1"
+          :alt="randomArticles[0]?.alttext || randomArticles[0]?.title"
+        />
+        <div class="bottom-overlay">
+          <div class="overlay-text">
+            {{ randomArticles[0]?.title }}
+          </div>
+        </div>
+      </a-cards>
+    </a-col>
+
+    <!-- Featured: Others -->
+    <a-col class="col col-md-5 col-sm-12">
+      <a-cards
+        width="100%"
+        class="image-container"
+        :to="`/artikel/${randomArticles[1]?.slug}`"
+        :elevation="0"
+      >
+        <img
+          :src="randomArticles[1]?.image"
+          class="custom-image-2"
+          :alt="randomArticles[1]?.alttext || randomArticles[1]?.title"
+        />
+        <div class="bottom-overlay">
+          <div class="overlay-text">
+            {{ randomArticles[1]?.title }}
+          </div>
+        </div>
+      </a-cards>
+
+      <a-row>
+        <a-col class="col col-md-6 col-sm-12">
+          <a-cards
+            width="99%"
+            class="image-container"
+            :to="`/artikel/${randomArticles[2]?.slug}`"
+            :elevation="0"
+          >
+            <img
+              :src="randomArticles[2]?.image + '/detail410'"
+              class="custom-image-3"
+              :alt="randomArticles[2]?.alttext || randomArticles[2]?.title"
+            />
+            <div class="bottom-overlay">
+              <div class="overlay-text">
+                {{ randomArticles[2]?.title }}
+              </div>
+            </div>
+          </a-cards>
+        </a-col>
+
+        <a-col class="col col-md-6 col-sm-12">
+          <a-cards
+            width="100%"
+            class="image-container"
+            :to="`/artikel/${randomArticles[3]?.slug}`"
+            :elevation="0"
+          >
+            <img
+              :src="randomArticles[3]?.image + '/detail410'"
+              class="custom-image-3"
+              :alt="randomArticles[3]?.alttext || randomArticles[3]?.title"
+            />
+            <div class="bottom-overlay">
+              <div class="overlay-text">
+                {{ randomArticles[3]?.title }}
+              </div>
+            </div>
+          </a-cards>
+        </a-col>
+      </a-row>
+    </a-col>
+  </a-row>
+
   <a-container class="jarak">
-    <a-row style="margin-top: 170px">
+    <a-row>
       <a-col>
-        <a-row>
-          <!-- Gambar 1 (artikel ke-0) -->
-          <a-col class="col col-md-6 col-sm-12">
-            <a-cards
-              width="99%"
-              class="image-container"
-              :to="`${randomArticles[0]?.slug}`"
-              style="transform: none"
-              :elevation="0"
-            >
-              <img
-                :src="randomArticles[0]?.image"
-                class="custom-image-1"
-                :alt="randomArticles[0]?.alttext || randomArticles[0]?.title"
-              />
-              <div class="bottom-overlay">
-                <div class="overlay-text">
-                  {{ randomArticles[0]?.title }}
-                </div>
-              </div>
-            </a-cards>
-          </a-col>
-
-          <!-- Gambar 2 + 3 + 4 di sebelah kanan -->
-          <a-col class="col col-md-6 col-sm-12">
-            <!-- Gambar 2 -->
-            <a-cards
-              width="100%"
-              class="image-container"
-              :to="`${randomArticles[0]?.slug}`"
-              style="transform: none"
-              :elevation="0"
-            >
-              <img
-                :src="randomArticles[1]?.image"
-                class="custom-image-2"
-                :alt="randomArticles[1]?.alttext || randomArticles[1]?.title"
-              />
-              <div class="bottom-overlay">
-                <div class="overlay-text">
-                  {{ randomArticles[1]?.title }}
-                </div>
-              </div>
-            </a-cards>
-
-            <a-row>
-              <!-- Gambar 3 -->
-              <a-col class="col col-md-6 col-sm-12">
-                <a-cards
-                  width="99%"
-                  height="99%"
-                  :to="`${randomArticles[0]?.slug}`"
-                  style="transform: none"
-                  class="image-container"
-                  :elevation="0"
-                >
-                  <img
-                    :src="randomArticles[2]?.image + '/detail410'"
-                    class="custom-image-3"
-                    :alt="
-                      randomArticles[2]?.alttext || randomArticles[2]?.title
-                    "
-                  />
-                  <div class="bottom-overlay">
-                    <div class="overlay-text">
-                      {{ randomArticles[2]?.title }}
-                    </div>
-                  </div>
-                </a-cards>
-              </a-col>
-
-              <!-- Gambar 4 -->
-              <a-col class="col col-md-6 col-sm-12">
-                <a-cards
-                  width="100%"
-                  class="image-container"
-                  :to="`${randomArticles[0]?.slug}`"
-                  style="transform: none"
-                  :elevation="0"
-                >
-                  <img
-                    :src="randomArticles[3]?.image + '/detail410'"
-                    class="custom-image-3"
-                    :alt="
-                      randomArticles[3]?.alttext || randomArticles[3]?.title
-                    "
-                  />
-                  <div class="bottom-overlay">
-                    <div class="overlay-text">
-                      {{ randomArticles[3]?.title }}
-                    </div>
-                  </div>
-                </a-cards>
-              </a-col>
-            </a-row>
-          </a-col>
-        </a-row>
-
+        <!-- Pagination Header Above Full Line -->
         <a-row class="mt-8">
           <a-col>
-            <div class="steam-press-milestone">
-              <!-- Label kiri "Steam Press" -->
-              <div class="label-steam-press">Artikel</div>
-
-              <!-- Garis horizontal full (posisi absolute) -->
-              <div class="line"></div>
-
-              <!-- Label "Milestone" ditempatkan di atas garis -->
-              <div class="label-milestone">Milestone</div>
+            <div class="milestone-header">
+              <span class="milestone-title">Artikel</span>
+              <div class="milestone-nav">
+                <button class="arrow-btn" @click="prevPage">&#10094;</button>
+                <span class="page-info">
+                  Halaman {{ currentPage }} dari {{ totalPages }}
+                </span>
+                <button class="arrow-btn" @click="nextPage">&#10095;</button>
+              </div>
             </div>
+            <div class="milestone-line"></div>
           </a-col>
         </a-row>
 
-        <!-- Tampilan Blog Card -->
+        <!-- Blog Cards -->
         <a-row>
-          <!-- Contoh menampilkan 3 card blog -->
           <a-col
             class="col-md-4 col-sm-12"
-            v-for="(article, index) in paginatedItems"
-            :key="index"
+            v-for="(article, idx) in paginatedItems"
+            :key="idx"
           >
             <a-cards
               class="custom-card"
               width="100%"
               :elevation="0"
-              :to="article.slug"
+              :to="`/artikel/${article.slug}`"
             >
-              <!-- Gambar Blog -->
               <img
                 :src="article.image + '/detail410'"
-                :alt="article.alttext"
+                :alt="article.alttext || article.title"
                 class="custom-image-blog"
               />
-
-              <h4 class="blog-title">{{ article.title }}</h4>
               <p class="blog-description">{{ article.published_at }}</p>
+              <h4 class="blog-title">{{ article.title }}</h4>
             </a-cards>
           </a-col>
         </a-row>
-        <div class="pagination-controls text-center">
-          <a-button
-            @click="prevPage"
-            :disabled="currentPage === 1"
-            class="mr-2"
-            text="Sebelumnya"
-          >
-            Sebelumnya
-          </a-button>
-
-          <span>Halaman {{ currentPage }} dari {{ totalPages }}</span>
-
-          <a-button
-            @click="nextPage"
-            :disabled="currentPage === totalPages"
-            class="ml-2"
-            text="Selanjutnya"
-          >
-            Selanjutnya
-          </a-button>
-        </div>
       </a-col>
     </a-row>
   </a-container>
@@ -289,14 +256,6 @@ useSeoMeta({
   transform: scale(1.05);
 }
 
-.pagination-controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  margin-top: 30px;
-}
-
 .image-container {
   position: relative;
 }
@@ -310,68 +269,72 @@ useSeoMeta({
   padding: 20px;
 }
 
-/* Styling teks overlay */
 .overlay-text {
   color: #fff;
   font-size: 1.4rem;
   line-height: 1.2;
 }
 
-.steam-press-milestone {
-  position: relative; // Agar elemen anak yang absolute dapat diposisikan relatif terhadap sini
-  width: 100%;
-  height: 40px; // Atur tinggi sesuai kebutuhan
-
-  // Agar "Steam Press" menempel di bawah (sama dengan garis)
+.milestone-header {
   display: flex;
-  align-items: flex-end;
-}
-
-.label-steam-press {
-  display: inline-flex;
   align-items: center;
-  padding: 0 16px;
-  background-color: #f70c0c; // Warna hijau
-  color: #ffffff; // Teks putih
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.milestone-title {
+  font-size: 1.25rem;
   font-weight: 600;
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
-  height: 100%;
-  z-index: 2; // Pastikan berada di atas garis bila terjadi tumpang tindih
+  color: #d4af37;
+  white-space: nowrap;
 }
 
-.line {
-  position: absolute;
-  bottom: 0; // Garis menempel tepat di bagian bawah kontainer
-  // Mulai garis dari ujung kanan label-steam-press.
-  // Cara termudah adalah memulai garis dari titik 0 dan menutupinya oleh label,
-  // sehingga secara visual tampak menyatu dengan label.
-  left: 0;
-  right: 0;
-  height: 2px; // Ketebalan garis
-  background-color: #f70c0c; // Warna sama dengan label untuk efek menyatu
-  z-index: 1;
+.milestone-nav {
+  display: flex;
+  gap: 0.5rem;
 }
 
-.label-milestone {
-  position: absolute;
-  // Posisi di atas garis, misalnya sedikit naik dari garis
-  bottom: 4px; // Geser ke atas dari garis (2px garis + 2px margin)
-  right: 16px; // Jarak dari sisi kanan, bisa disesuaikan
-  background: #fff; // Background putih agar teks tampil jelas dan menutupi garis di bawahnya
-  padding: 0 4px; // Ruang antar teks dan background
-  color: #929292;
-  z-index: 3; // Pastikan berada di atas garis
+.arrow-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #ddd;
+  background: #fff;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
 }
+
+.arrow-btn:hover {
+  background: #f5f5f5;
+}
+
+.milestone-line {
+  width: 100%;
+  height: 2px;
+  background-color: #d4af37;
+  margin: 0;
+}
+
+.page-info {
+  margin: 0 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  display: flex;
+  align-items: center;
+}
+
 .custom-card {
   margin-top: 0.5rem;
   padding: 0.5rem;
-  // Agar card nampak rapi, silakan menyesuaikan styling di sini
 }
 
 .custom-image-blog {
   width: 100%;
-  height: 13rem;
+  height: 20rem;
   object-fit: cover;
   border-radius: 0.5rem;
 }
@@ -383,7 +346,6 @@ useSeoMeta({
 
 .blog-description {
   font-size: 0.8rem;
-  margin-top: -1rem;
   color: rgb(170, 170, 170);
 }
 </style>
