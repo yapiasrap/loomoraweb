@@ -25,28 +25,38 @@ const banner = ref({
 <template>
   <div class="container mt-5">
     <div class="row">
-      <div class="col-12 col-md-8 col-sm-12">
-        <breadcrumbs style="margin-left: -4%" />
+      <!-- Konten Artikel -->
+      <div class="col-12 col-md-8 col-sm-12 pe-md-5">
+        <breadcrumbs class="mb-3 ms-n2" />
+
         <!-- Tampilkan konten jika sudah ada -->
-        <div class="container mt-2" v-if="article && article.content">
-          <div v-for="(block, index) in article.content" :key="index">
+        <div v-if="article && article.content">
+          <div
+            v-for="(block, index) in article.content"
+            :key="index"
+            class="mb-4"
+          >
             <template v-if="block.type === 'h1'">
-              <h1>{{ block.text }}</h1>
-              <div class="a-divider" />
+              <h1 class="fs-2 fw-bold mb-2">{{ block.text }}</h1>
+              <div class="a-divider mb-3" />
             </template>
 
             <template v-else-if="block.type === 'h2'">
-              <h2>{{ block.text }}</h2>
-              <div class="a-divider" />
+              <h2 class="fs-4 fw-semibold mb-2">{{ block.text }}</h2>
+              <div class="a-divider mb-3" />
             </template>
 
             <template v-else-if="block.type === 'p'">
-              <p>{{ block.text }}</p>
+              <p class="mb-3 lh-base text-justify">{{ block.text }}</p>
             </template>
 
             <template v-else-if="block.type === 'ul'">
-              <ul>
-                <li v-for="(item, idx) in block.items" :key="idx">
+              <ul class="ps-3 mb-3">
+                <li
+                  v-for="(item, idx) in block.items"
+                  :key="idx"
+                  class="mb-2"
+                >
                   <strong>{{ item.description }}</strong><br />
                   {{ item.title }}
                 </li>
@@ -54,8 +64,12 @@ const banner = ref({
             </template>
 
             <template v-else-if="block.type === 'ol'">
-              <ol>
-                <li v-for="(item, idx) in block.items" :key="idx">
+              <ol class="ps-3 mb-3">
+                <li
+                  v-for="(item, idx) in block.items"
+                  :key="idx"
+                  class="mb-2"
+                >
                   <strong>{{ item.description }}</strong><br />
                   {{ item.title }}
                 </li>
@@ -63,27 +77,32 @@ const banner = ref({
             </template>
 
             <template v-else-if="block.type === 'img'">
-              <img
-                :src="block.url"
-                :alt="block.alt"
-                style="width: 100%; height: auto"
-              />
+              <div class="text-center my-4">
+                <img
+                  :src="block.url"
+                  :alt="block.alt"
+                  class="img-fluid rounded"
+                  style="max-width: 100%; height: auto"
+                />
+              </div>
             </template>
           </div>
         </div>
       </div>
 
-      <div class="col-12 col-md-4 col-sm-12">
-        <!-- Sidebar atau komponen lain bisa ditambahkan di sini -->
+      <!-- Sidebar -->
+      <div class="col-12 col-md-4 col-sm-12 mt-4 mt-md-0">
+        <!-- Tambahkan komponen sidebar di sini jika diperlukan -->
       </div>
     </div>
   </div>
 </template>
 
+
 <style scoped>
 .a-divider {
   width: 40%;
   height: 3px;
-  background-color: red;
+  background-color: #D2AD37;
 }
 </style>
