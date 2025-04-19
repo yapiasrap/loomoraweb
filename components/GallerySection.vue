@@ -1,47 +1,57 @@
 <script setup>
+import { ref } from "vue";
+
 const products = [
   {
     name: "Sentuhan Beludru",
     series: "Koleksi Premium",
     image:
-      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/bfde99e0-d554-4509-416c-6881e792d600/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/bfde99e0-d554-4509-416c-6881e792d600/herotablet",
   },
-
   {
     name: "Pasir Sahara",
     series: "Seri Alam",
     image:
-      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/herotablet",
   },
-
   {
     name: "Cahaya Keemasan",
     series: "Lini Eksklusif",
     image:
-      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/a73f434a-e444-4af4-41db-fe9fd3828f00/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/a73f434a-e444-4af4-41db-fe9fd3828f00/herotablet",
   },
-
   {
     name: "Putih Nordik",
     series: "Nuansa Skandinavia",
     image:
-      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/ce24d606-aa84-45a7-8306-461a79106c00/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/ce24d606-aa84-45a7-8306-461a79106c00/herotablet",
   },
-
   {
     name: "Kabut Perkotaan",
     series: "Seri Modern",
     image:
-      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/herotablet",
   },
-
   {
     name: "Hutan Zamrud",
     series: "Seri Alam",
     image:
-      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/f09b8dbb-e9e6-4fb0-40cc-e8e33029a300/kotak300",
+      "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/f09b8dbb-e9e6-4fb0-40cc-e8e33029a300/herotablet",
   },
 ];
+
+const showModal = ref(false);
+const selectedProduct = ref(null);
+
+function openModal(index) {
+  selectedProduct.value = products[index];
+  showModal.value = true;
+}
+
+function closeModal() {
+  showModal.value = false;
+  selectedProduct.value = null;
+}
 </script>
 
 <template>
@@ -61,7 +71,7 @@ const products = [
           <img :src="product.image" :alt="product.name" />
 
           <div class="hover-overlay">
-            <a-button id="produk" text="Detail" />
+            <a-button text="Detail" @click="openModal(index)" />
           </div>
         </div>
 
@@ -69,22 +79,32 @@ const products = [
         <p class="product-series mb-5">{{ product.series }}</p>
       </a-col>
     </a-row>
+
+    <!-- Modal ala Vuetify VDialog -->
+    <div v-if="showModal" class="v-dialog-overlay" @click.self="closeModal">
+      <div class="v-dialog-content">
+        <img
+          :src="selectedProduct.image"
+          :alt="selectedProduct.name"
+          class="dialog-image"
+        />
+        <button class="v-dialog-close" @click="closeModal">✕</button>
+      </div>
+    </div>
   </a-container>
 </template>
 
 <style lang="scss" scoped>
-// Typography
 .heading {
   font-weight: 800;
-  font-size: 2.5rem; // set mendekati text-h4
+  font-size: 2.5rem;
   line-height: 1.2;
 }
 
-// Product card
 .image-wrapper {
   position: relative;
   width: 100%;
-  padding-bottom: 100%; // makin besar, makin tinggi bentuknya
+  padding-bottom: 100%;
   overflow: hidden;
 
   img {
@@ -105,22 +125,10 @@ const products = [
     background-color: rgba(0, 0, 0, 0);
     opacity: 0;
     transition: background-color 0.3s ease, opacity 0.3s ease;
-
-    .btn-detail {
-      background-color: #d4af37;
-      color: #fff;
-      font-size: 1rem;
-      font-weight: 500;
-      padding: 0.5rem 1rem;
-      border: none;
-      cursor: pointer;
-      transform: scale(1);
-      transition: transform 0.3s ease;
-    }
   }
 
   &:hover .hover-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.4);
     opacity: 1;
 
     .btn-detail {
@@ -131,11 +139,59 @@ const products = [
 
 .product-name {
   font-weight: bold;
-  font-size: 1.25rem; // text-h6
+  font-size: 1.25rem;
 }
 
 .product-series {
   font-size: 1rem;
   margin-top: -1rem;
+}
+
+.v-dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  backdrop-filter: blur(2px);
+  padding: 2rem;
+}
+
+.v-dialog-content {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dialog-image {
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.v-dialog-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.75rem;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  z-index: 10000;
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 }
 </style>

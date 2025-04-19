@@ -42,7 +42,7 @@
             Optimalkan ruang Anda dengan karpet kustom berkualitas tinggi –
             hubungi tim profesional kami untuk konsultasi.
           </p>
-          <a-button text="Send Message" />
+          <a-button text="Send Message" to="/kontak" />
         </div>
       </div>
     </a-container>
