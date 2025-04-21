@@ -19,28 +19,26 @@ useSeoMeta({
 <template>
   <div>
     <section data-aos="fade-up">
-      <banner-header />
+      <BannerHeader />
     </section>
 
-    <section data-aos="zoom-in-up">
-      <gallery-section />
-    </section>
+    <GallerySection />
 
     <LazyHydration when-visible>
       <section data-aos="fade-left">
-        <memilih-kami />
+        <MemilihKami />
       </section>
 
       <section data-aos="flip-up">
-        <banner-total />
+        <BannerTotal />
       </section>
 
       <section data-aos="fade-up">
-        <features />
+        <Features />
       </section>
 
       <section data-aos="fade-up">
-        <last-project />
+        <LastProject />
       </section>
     </LazyHydration>
   </div>
