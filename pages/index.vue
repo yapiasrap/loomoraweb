@@ -20,7 +20,7 @@ useSeoMeta({
   <banner-header />
   <gallery-section />
   <LazyHydration when-visible>
-    <about-section />
+    <memilih-kami />
     <banner-total />
     <features />
     <last-project />
