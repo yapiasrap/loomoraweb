@@ -16,7 +16,7 @@ const images = [
     text: "Ballroom Timor Leste",
     category: "Karpet Ballroom",
   },
-  
+
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F4.jpeg?alt=media&token=568d0b1f-5f2d-40cb-a4be-e4101f10bc83",
     text: "Ballroom Sucofindo - Jakarta",
@@ -116,13 +116,15 @@ const filteredImages = computed(() => {
         v-for="(image, index) in filteredImages"
         :key="image.src"
         class="project-card"
+        :data-aos="'fade-up'"
+        :data-aos-delay="index * 100"
       >
         <img
           :src="image.src"
           alt="Gambar Proyek Karpet"
           class="project-image"
         />
-
+        
         <div class="card-overlay">
           <div class="card-text">{{ image.text }}</div>
         </div>

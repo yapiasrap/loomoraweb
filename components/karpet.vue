@@ -32,18 +32,24 @@ const advantageList = [
 <template>
   <a-container>
     <!-- TEXT SECTION -->
-    <section class="text-section">
-      <div class="inner-content animate-on-scroll" v-observe>
+    <section class="text-section" data-aos="fade-up">
+      <div class="inner-content">
         <p class="feature-label">FEATURES PRODUCT</p>
-        <h2 class="title">{{ operandata.judul }}</h2>
-        <p class="description">{{ operandata.deskripsi }}</p>
-        <p class="advantage-title">{{ operandata.keunggulan }}</p>
+        <h2 class="title" data-aos="fade-up" data-aos-delay="100">
+          {{ operandata.judul }}
+        </h2>
+        <p class="description" data-aos="fade-up" data-aos-delay="200">
+          {{ operandata.deskripsi }}
+        </p>
+        <p class="advantage-title" data-aos="fade-up" data-aos-delay="300">
+          {{ operandata.keunggulan }}
+        </p>
         <ul class="advantage-list">
           <li
             v-for="(item, idx) in advantageList"
             :key="idx"
-            class="animate-on-scroll"
-            v-observe
+            data-aos="fade-right"
+            :data-aos-delay="(idx + 1) * 100 + 300"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -59,11 +65,15 @@ const advantageList = [
           </li>
         </ul>
       </div>
-      <div class="section-divider mt-7 animate-on-scroll" v-observe></div>
+      <div
+        class="section-divider mt-7"
+        data-aos="fade-in"
+        data-aos-delay="500"
+      ></div>
     </section>
 
     <!-- IMAGE SECTION -->
-    <div class="image-section animate-on-scroll" v-observe>
+    <div class="image-section" data-aos="zoom-in" data-aos-delay="600">
       <img :src="operandata.images" alt="Featured Product" />
     </div>
 
@@ -73,8 +83,9 @@ const advantageList = [
         <div
           v-for="(item, idx) in operandata.info"
           :key="idx"
-          class="info-card animate-on-scroll"
-          v-observe
+          class="info-card"
+          data-aos="fade-up"
+          :data-aos-delay="(idx + 1) * 100 + 600"
         >
           <h3 class="info-title">{{ item.title }}</h3>
           <p class="info-description">{{ item.desc }}</p>

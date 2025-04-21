@@ -235,15 +235,10 @@ useSeoMeta({
 <template>
   <Top :operandata="banner" />
 
-  <!-- Container Utama -->
   <a-container class="my-5">
-    <!-- Header Kontak/Informasi -->
-    <div class="contact-header">
+    <div class="contact-header" data-aos="fade-up">
       <p>
-        Kami menyediakan pilihan karpet tile elegan dengan spesifikasi tinggi
-        yang dapat disesuaikan dengan gaya, fungsi, dan karakter ruang Anda.
-        Temukan produk terbaik untuk interior rumah, kantor, ataupun area
-        komersial melalui solusi inovatif kami.
+        Kami menyediakan pilihan karpet tile elegan dengan spesifikasi tinggi...
       </p>
 
       <div class="divider">
@@ -255,13 +250,16 @@ useSeoMeta({
 
     <!-- Grid Produk -->
     <div class="grid">
-      <div class="card" v-for="product in products" :key="product.id">
-        <!-- Gambar Produk -->
+      <div
+        class="card"
+        v-for="product in products"
+        :key="product.id"
+        data-aos="zoom-in-up"
+      >
         <div class="card-image">
           <img :src="product.image" :alt="product.name" />
         </div>
 
-        <!-- Konten Produk -->
         <div class="card-content">
           <h3 class="product-title">{{ product.name }}</h3>
           <a-button text="Detail" @click="openDetail(product)" />
@@ -270,9 +268,8 @@ useSeoMeta({
     </div>
   </a-container>
 
-  <!-- Dialog Modal untuk Detail Spesifikasi -->
   <div v-if="selectedProduct" class="modal-overlay" @click.self="closeDetail">
-    <div class="modal">
+    <div class="modal" data-aos="fade-up">
       <h3>{{ selectedProduct.name }} - Spesifikasi</h3>
       <ul class="specs">
         <li v-for="(spec, index) in selectedProduct.specs" :key="index">

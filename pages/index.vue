@@ -17,12 +17,31 @@ useSeoMeta({
 </script>
 
 <template>
-  <banner-header />
-  <gallery-section />
-  <LazyHydration when-visible>
-    <memilih-kami />
-    <banner-total />
-    <features />
-    <last-project />
-  </LazyHydration>
+  <div>
+    <section data-aos="fade-up">
+      <banner-header />
+    </section>
+
+    <section data-aos="zoom-in-up">
+      <gallery-section />
+    </section>
+
+    <LazyHydration when-visible>
+      <section data-aos="fade-left">
+        <memilih-kami />
+      </section>
+
+      <section data-aos="flip-up">
+        <banner-total />
+      </section>
+
+      <section data-aos="fade-up">
+        <features />
+      </section>
+
+      <section data-aos="fade-up">
+        <last-project />
+      </section>
+    </LazyHydration>
+  </div>
 </template>

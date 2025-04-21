@@ -1,0 +1,67 @@
+// Import default AOS CSS (wajib)
+@import "aos/dist/aos.css";
+
+// Custom override & animasi tambahan
+
+[data-aos] {
+  transition-property: opacity, transform;
+  transition-timing-function: ease-out;
+  will-change: transform, opacity;
+}
+
+// Fade in up halus
+[data-aos="fade-up"] {
+  opacity: 0;
+  transform: translateY(40px);
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Zoom in dengan scale lembut
+[data-aos="zoom-in"] {
+  opacity: 0;
+  transform: scale(0.9);
+
+  &.aos-animate {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// Slide dari kiri
+[data-aos="slide-left"] {
+  opacity: 0;
+  transform: translateX(-50px);
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Slide dari kanan
+[data-aos="slide-right"] {
+  opacity: 0;
+  transform: translateX(50px);
+
+  &.aos-animate {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+// Efek masuk dengan blur halus
+[data-aos="fade-blur"] {
+  opacity: 0;
+  filter: blur(6px);
+  transform: translateY(20px);
+
+  &.aos-animate {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+  }
+}

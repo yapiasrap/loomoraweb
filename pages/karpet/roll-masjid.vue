@@ -136,7 +136,12 @@ useSeoMeta({
   </div>
 
   <div class="luxury-grid">
-    <div v-for="(product, index) in products" :key="product.id" class="lux-row">
+    <div
+      v-for="(product, index) in products"
+      :key="product.id"
+      class="lux-row"
+      :data-aos="i % 2 === 0 ? 'slide-right' : 'slide-left'"
+    >
       <!-- Alternatif tampilan: baris genap tampilkan gambar di kiri, baris ganjil di kanan -->
       <template v-if="index % 2 === 0">
         <div
@@ -144,7 +149,7 @@ useSeoMeta({
           :style="{ backgroundImage: `url(${product.image})` }"
         ></div>
         <div class="lux-col info">
-          <div class="info-inner">
+          <div class="info-inner" data-aos="fade-up">
             <p class="category">KATEGORI</p>
             <h2 class="title">{{ product.title }}</h2>
             <div class="price">

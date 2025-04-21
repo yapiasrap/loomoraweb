@@ -11,7 +11,7 @@ useSeoMeta({
 
   <section class="contact-wrapper">
     <!-- Header -->
-    <div class="contact-header">
+    <div class="contact-header" data-aos="fade-up">
       <h1 class="section-title">Konsultasi Karpet</h1>
       <div class="divider">
         <span class="line"></span>
@@ -28,7 +28,7 @@ useSeoMeta({
     <!-- Content -->
     <div class="contact-content">
       <!-- Left Image & Info -->
-      <div class="contact-image">
+      <div class="contact-image" data-aos="fade-right">
         <img
           src="https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/52b89b5a-b42a-48eb-216a-83019f0c3800/mobile"
           alt="Contact Loomora Kustom Karpet"
@@ -51,7 +51,7 @@ useSeoMeta({
       </div>
 
       <!-- Right Form -->
-      <form class="contact-form">
+      <form class="contact-form" data-aos="fade-left">
         <div class="input-group">
           <input type="text" placeholder="Nama Lengkap" required />
           <input type="email" placeholder="Email" required />
@@ -62,7 +62,7 @@ useSeoMeta({
     </div>
 
     <!-- Google Maps -->
-    <div class="maps">
+    <div class="maps" data-aos="fade-up">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1983.9821937782347!2d106.82266091609638!3d-6.175392462288733!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5d061b74083%3A0x90d8409c07d31b8c!2sMonas!5e0!3m2!1sen!2sid!4v1612929627787!5m2!1sen!2sid"
         width="100%"
