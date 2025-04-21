@@ -127,11 +127,11 @@ const isMdAndUp = computed(() => width.value >= 960);
         </a-col>
 
         <a-col class="col-12 col-md-5 text-right">
-          <a href="/terms" class="footer-bottom-link">Terms of Use</a>
-          <a href="/privacy-policy" class="footer-bottom-link"
-            >Privacy Policy</a
-          >
-          <a href="/cookie-policy" class="footer-bottom-link">Cookie Policy</a>
+          <!-- <a href="/terms" class="footer-bottom-link">Terms of Use</a> -->
+          <a href="/privacy-policy" class="footer-bottom-link">
+            Privacy Policy
+          </a>
+          <!-- <a href="/cookie-policy" class="footer-bottom-link">Cookie Policy</a> -->
         </a-col>
       </a-row>
     </a-container>
@@ -222,7 +222,7 @@ const isMdAndUp = computed(() => width.value >= 960);
   justify-content: center;
   width: 45px;
   height: 45px;
-  border-radius: 4px;
+  border-radius: 20px;
   text-decoration: none;
 }
 
