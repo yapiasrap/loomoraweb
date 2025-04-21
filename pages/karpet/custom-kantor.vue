@@ -1,5 +1,7 @@
 <script setup>
-const banner = { judul: "Karpet Custom Kantor" };
+const banner = {
+  judul: "Karpet Custom Kantor",
+};
 
 const karpetData = {
   judul: "Sentuhan Profesional untuk Ruang Kerja Anda",
@@ -27,6 +29,19 @@ const karpetData = {
     },
   ],
 };
+
+useSeoMeta({
+  title: "Karpet Custom Kantor",
+  ogTitle: "Karpet Custom Kantor",
+  description:
+    "Temukan karpet custom untuk kantor dengan desain elegan dan fungsional. Loomora menyediakan berbagai pilihan bahan, motif, dan ukuran untuk menciptakan suasana kantor yang nyaman dan profesional.",
+  ogDescription:
+    "Karpet custom kantor dari Loomora hadir dengan desain elegan dan pilihan bahan berkualitas tinggi. Sesuaikan motif dan ukuran untuk menciptakan ruang kerja yang nyaman dan mendukung produktivitas.",
+  ogImage:
+    "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/78468be4-c4fa-4aef-ed59-b9036cf57a00/ogimage",
+  twitterCard: "summary_large_image",
+  robots: "index, follow",
+});
 </script>
 
 <template>

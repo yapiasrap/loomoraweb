@@ -2,7 +2,7 @@
 import { ref } from "vue";
 
 // Data banner
-const banner = { judul: "Karpet Tile" };
+const banner = { judul: "Karpet Tile Elegan & Fungsional" };
 
 // Array produk dengan spesifikasi
 const products = ref([
@@ -217,6 +217,19 @@ function openDetail(product) {
 function closeDetail() {
   selectedProduct.value = null;
 }
+
+useSeoMeta({
+  title: "Karpet Tile Elegan & Fungsional",
+  ogTitle: "Karpet Tile Elegan & Fungsional",
+  description:
+    "Temukan koleksi karpet tile berkualitas tinggi dari Loomora. Cocok untuk kantor, rumah, atau area komersial. Tersedia berbagai ukuran, bahan, dan desain yang stylish serta fungsional.",
+  ogDescription:
+    "Temukan koleksi karpet tile berkualitas tinggi dari Loomora. Cocok untuk kantor, rumah, atau area komersial. Tersedia berbagai ukuran, bahan, dan desain yang stylish serta fungsional.",
+  ogImage:
+    "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/bfde99e0-d554-4509-416c-6881e792d600/ogimage",
+  twitterCard: "summary_large_image",
+  robots: "index, follow",
+});
 </script>
 
 <template>

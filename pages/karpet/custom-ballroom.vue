@@ -27,6 +27,19 @@ const karpetData = {
     },
   ],
 };
+
+useSeoMeta({
+  title: "Karpet Custom Ballroom",
+  ogTitle: "Karpet Custom Ballroom",
+  description:
+    "Tingkatkan suasana ballroom Anda dengan karpet custom dari Loomora. Pilih desain, bahan, dan ukuran yang sesuai untuk acara elegan Anda.",
+  ogDescription:
+    "Karpet custom untuk ballroom dari Loomora memberikan kesan elegan dan mewah. Pilih dari berbagai desain dan bahan berkualitas tinggi.",
+  ogImage:
+    "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/78468be4-c4fa-4aef-ed59-b9036cf57a00/ogimage",
+  twitterCard: "summary_large_image",
+  robots: "index, follow",
+});
 </script>
 
 <template>

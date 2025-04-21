@@ -60,7 +60,7 @@ const isMdAndUp = computed(() => width.value >= 960);
                 </li>
 
                 <li>
-                  <a href="/produk"> Produk </a>
+                  <a href="/artikel"> Artikel </a>
                 </li>
 
                 <li>
@@ -121,7 +121,8 @@ const isMdAndUp = computed(() => width.value >= 960);
       <a-row class="bottom-row">
         <a-col class="col-12 col-md-7">
           <span class="small-text">
-            Copyright © 2025 Loomora, All rights reserved. Crafted with passion.
+            Copyright © 2025 Loomora, All rights reserved. Powered by Aresa
+            Digital.
           </span>
         </a-col>
 

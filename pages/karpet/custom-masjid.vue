@@ -1,5 +1,7 @@
 <script setup>
-const banner = { judul: "Karpet Custom Masjid" };
+const banner = {
+  judul: "Karpet Custom Masjid",
+};
 
 const karpetData = {
   judul: "Meningkatkan Kenyamanan dalam Suasana Ibadah",
@@ -27,6 +29,19 @@ const karpetData = {
     },
   ],
 };
+
+useSeoMeta({
+  title: "Karpet Custom Masjid",
+  ogTitle: "Karpet Custom Masjid",
+  description:
+    "Loomora menyediakan layanan karpet custom untuk masjid Anda. Bebas pilih motif, warna, ukuran, dan bahan. Hadirkan kenyamanan dan keindahan yang sesuai dengan karakter masjid Anda.",
+  ogDescription:
+    "Buat karpet masjid sesuai keinginan Anda. Loomora menawarkan karpet custom dengan kualitas premium dan desain eksklusif yang disesuaikan untuk kenyamanan ruang ibadah.",
+  ogImage:
+    "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/5c4d0cf5-f34d-425e-3d86-2144a0c9af00/ogimage",
+  twitterCard: "summary_large_image",
+  robots: "index, follow",
+});
 </script>
 
 <template>

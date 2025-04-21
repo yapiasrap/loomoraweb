@@ -1,6 +1,10 @@
 <script setup>
 import { ref, computed } from "vue";
 
+useSeoMeta({
+  robots: "noindex, nofollow",
+});
+
 const categories = ["All", "Karpet Masjid", "Karpet Ballroom", "Karpet Kantor"];
 const selectedCategory = ref("All");
 
@@ -12,6 +16,7 @@ const images = [
     text: "Ballroom Timor Leste",
     category: "Karpet Ballroom",
   },
+  
   {
     src: "https://firebasestorage.googleapis.com/v0/b/loomora-cdb63.firebasestorage.app/o/images%2Fproject%2F4.jpeg?alt=media&token=568d0b1f-5f2d-40cb-a4be-e4101f10bc83",
     text: "Ballroom Sucofindo - Jakarta",

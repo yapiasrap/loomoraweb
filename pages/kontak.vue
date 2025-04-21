@@ -1,5 +1,9 @@
 <script setup>
 const banner = { judul: "Butuh Bantuan?" };
+
+useSeoMeta({
+  robots: "noindex, nofollow",
+});
 </script>
 
 <template>

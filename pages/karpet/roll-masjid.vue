@@ -1,7 +1,9 @@
 <script setup>
 import { mdiCheckboxMarkedCircleOutline } from "@mdi/js";
 
-const banner = { judul: "Karpet Roll Masjid" };
+const banner = {
+  judul: "Karpet Roll Masjid",
+};
 
 const products = [
   {
@@ -100,6 +102,19 @@ const products = [
       "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/78468be4-c4fa-4aef-ed59-b9036cf57a00/herotablet",
   },
 ];
+
+useSeoMeta({
+  title: "Karpet Roll Masjid",
+  ogTitle: "Karpet Roll Masjid",
+  description:
+    "Temukan berbagai pilihan karpet roll masjid berkualitas dengan harga terbaik. Tersedia berbagai grade: Super Premium, Premium, hingga Grade C. Estetis, nyaman, dan tahan lama untuk ruang ibadah Anda.",
+  ogDescription:
+    "Pilihan karpet roll masjid terbaik dari Loomora. Tersedia berbagai grade, warna, dan motif. Estetis dan nyaman untuk ruang ibadah Anda.",
+  ogImage:
+    "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/7bf4f0bb-5815-4611-d3e5-e0112e7ef300/ogimage",
+  twitterCard: "summary_large_image",
+  robots: "index, follow",
+});
 </script>
 
 <template>

@@ -13,7 +13,8 @@ const isMobile = computed(() => width.value < 600);
 // Fetch articles
 const { data } = await useAsyncData(
   "article-blog",
-  () => $fetch(`https://loomora-cdb63-default-rtdb.firebaseio.com/articles.json`),
+  () =>
+    $fetch(`https://loomora-cdb63-default-rtdb.firebaseio.com/articles.json`),
   { server: false }
 );
 
@@ -65,23 +66,21 @@ function prevPage() {
   currentPage.value = Math.max(currentPage.value - 1, 1);
 }
 
-// SEO metadata
 useSeoMeta({
-  title: "Rak Gudang Berkualitas - Solusi Penyimpanan Terbaik",
-  ogTitle: "Rak Gudang Berkualitas - Solusi Penyimpanan Terbaik",
+  title: "Artikel | Karpet Custom Mewah dan Berkualitas Tinggi",
+  ogTitle: "Artikel | Karpet Custom Mewah dan Berkualitas Tinggi",
   description:
-    "Temukan berbagai jenis rak gudang berkualitas untuk kebutuhan industri dan penyimpanan dengan harga terbaik.",
+    "Baca artikel-artikel terbaru tentang karpet custom berkualitas dan temukan inspirasi desain untuk ruang Anda dengan Loomora.",
   ogDescription:
-    "Temukan berbagai jenis rak gudang berkualitas untuk kebutuhan industri dan penyimpanan dengan harga terbaik.",
-  ogImage:
-    "https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/21c2cd2f-16c2-43c5-8b1a-6f4b4d6a5700/ogimage",
+    "Baca artikel-artikel terbaru tentang karpet custom berkualitas dan temukan inspirasi desain untuk ruang Anda dengan Loomora.",
+  ogImage: "https://link-ke-gambar-thumbnail-article-loomora.com", // Ganti dengan URL gambar artikel yang sesuai
   twitterCard: "summary_large_image",
   robots: "index, follow",
 });
 </script>
 
 <template>
-  <a-row style="margin-top: 15rem;">
+  <a-row style="margin-top: 15rem">
     <a-col class="col col-md-7 col-sm-12">
       <a-cards
         width="99%"
