@@ -51,7 +51,9 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
       alt="Logo"
       height="50"
     />
+
     <hr class="divider" />
+
     <ul class="menu">
       <li
         v-for="(item, index) in state.listmenu"
@@ -61,6 +63,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
         <NuxtLink :to="item.to" class="menu-item">
           {{ item.title }}
         </NuxtLink>
+
         <!-- Dropdown untuk mobile (opsional) -->
         <ul v-if="item.children" class="dropdown-mobile">
           <li v-for="(child, cIndex) in item.children" :key="cIndex">
@@ -71,6 +74,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
         </ul>
       </li>
     </ul>
+
     <button
       class="close-btn"
       @click="state.drawer = false"
@@ -86,6 +90,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
     :class="{ 'scrolled-app-bar': isScrolled }"
     role="navigation"
     aria-label="Main Navigation"
+    data-aos="fade-down"
   >
     <!-- VERSI MOBILE -->
     <div class="mobile-header mobile-only">
@@ -113,7 +118,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
     <div class="desktop-header desktop-only">
       <div class="desktop-container">
         <!-- Logo -->
-        <div class="nav-left">
+        <div class="nav-left" data-aos="fade-right">
           <img
             :src="
               isScrolled
@@ -126,7 +131,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
         </div>
 
         <!-- Menu Tengah -->
-        <nav class="nav-center">
+        <nav class="nav-center" data-aos="fade-down" data-aos-delay="200">
           <ul class="nav-menu">
             <li
               v-for="(item, index) in state.listmenu"
@@ -154,7 +159,7 @@ onUnmounted(() => window.removeEventListener("scroll", handleScroll));
         </nav>
 
         <!-- Tombol Kontak di Kanan -->
-        <div class="nav-right">
+        <div class="nav-right" data-aos="fade-left" data-aos-delay="400">
           <NuxtLink
             to="/kontak"
             class="contact-btn"

@@ -12,12 +12,14 @@ const isMdAndUp = computed(() => width.value >= 960);
     <a-container>
       <!-- Baris kedua: Get in Touch dan informasi kontak -->
       <a-row class="contact-row">
-        <a-col class="col-12 col-md-4">
+        <a-col class="col-12 col-md-4" data-aos="fade-right">
           <p class="contact-title">GET IN TOUCH</p>
+
           <p class="contact-address">
             Jl. Kebagusan Raya, Mawar No. 54 Pasar Minggu - Jakarta Selatan Kode
             Pos 12520
           </p>
+
           <div class="contact-email">
             <svg class="icon" width="20" height="20" viewBox="0 0 24 24">
               <path :d="mdiEmailOutline" />
@@ -49,11 +51,17 @@ const isMdAndUp = computed(() => width.value >= 960);
           </div>
         </a-col>
 
-        <a-col class="col-12 col-md-8">
+        <a-col class="col-12 col-md-8" data-aos="fade-up">
           <a-row :style="{ marginLeft: isMdAndUp ? '8%' : '0' }">
-            <a-col class="col-12 col-sm-3">
+            <a-col
+              class="col-12 col-sm-3"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <p class="title">EXPLORE</p>
-              <div class="divider"></div>
+
+              <div class="divider" />
+
               <ul class="footer-links">
                 <li>
                   <a href="/"> Beranda </a>
@@ -73,9 +81,13 @@ const isMdAndUp = computed(() => width.value >= 960);
               </ul>
             </a-col>
 
-            <a-col class="col-12 col-sm-4">
+            <a-col
+              class="col-12 col-sm-4"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <p class="title">KARPET PREMIUM</p>
-              <div class="divider"></div>
+              <div class="divider" />
               <ul class="footer-links">
                 <li>
                   <a href="/karpet/roll-masjid"> Karpet Roll Masjid </a>
@@ -99,7 +111,11 @@ const isMdAndUp = computed(() => width.value >= 960);
               </ul>
             </a-col>
 
-            <a-col class="col-12 col-sm-4 text-center">
+            <a-col
+              class="col-12 col-sm-4 text-center"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
               <img
                 src="https://imagedelivery.net/_tN3dTar-XzU6X9_PBgTbA/9b8c7f67-1493-44e1-3fff-23bd51661b00/mobile"
                 alt="logo Loomora"

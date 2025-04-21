@@ -5,6 +5,8 @@
       class="float pulse-button"
       @click.prevent="openWhatsapp"
       title="Chat with us"
+      data-aos="zoom-in-up"
+      data-aos-duration="1000"
     >
       <svg class="whatsapp-icon" viewBox="0 0 24 24">
         <path :d="mdiWhatsapp" />
