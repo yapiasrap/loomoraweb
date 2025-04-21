@@ -81,7 +81,12 @@ useSeoMeta({
 
 <template>
   <a-row style="margin-top: 15rem">
-    <a-col class="col col-md-7 col-sm-12">
+    <!-- Featured Articles Large -->
+    <a-col
+      class="col col-md-7 col-sm-12"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
       <a-cards
         width="99%"
         class="image-container"
@@ -101,12 +106,15 @@ useSeoMeta({
       </a-cards>
     </a-col>
 
+    <!-- Featured Articles Small -->
     <a-col class="col col-md-5 col-sm-12">
       <a-cards
         width="100%"
         class="image-container"
         :to="`/artikel/${randomArticles[1]?.slug}`"
         :elevation="0"
+        data-aos="fade-up"
+        data-aos-delay="200"
       >
         <img
           :src="randomArticles[1]?.image"
@@ -121,7 +129,11 @@ useSeoMeta({
       </a-cards>
 
       <a-row>
-        <a-col class="col col-md-6 col-sm-12">
+        <a-col
+          class="col col-md-6 col-sm-12"
+          data-aos="zoom-in"
+          data-aos-delay="300"
+        >
           <a-cards
             width="99%"
             class="image-container"
@@ -141,7 +153,11 @@ useSeoMeta({
           </a-cards>
         </a-col>
 
-        <a-col class="col col-md-6 col-sm-12">
+        <a-col
+          class="col col-md-6 col-sm-12"
+          data-aos="zoom-in"
+          data-aos-delay="400"
+        >
           <a-cards
             width="100%"
             class="image-container"
@@ -167,8 +183,8 @@ useSeoMeta({
   <a-container class="jarak">
     <a-row>
       <a-col>
-        <!-- Pagination Header Above Full Line -->
-        <a-row class="mt-8">
+        <!-- Pagination Header -->
+        <a-row class="mt-8" data-aos="fade-right" data-aos-delay="500">
           <a-col>
             <div class="milestone-header">
               <span class="milestone-title">Artikel</span>
@@ -184,12 +200,14 @@ useSeoMeta({
           </a-col>
         </a-row>
 
-        <!-- Blog Cards -->
+        <!-- Blog Cards Grid -->
         <a-row>
           <a-col
             class="col-md-4 col-sm-12"
             v-for="(article, idx) in paginatedItems"
             :key="idx"
+            data-aos="fade-up"
+            :data-aos-delay="600 + idx * 100"
           >
             <a-cards
               class="custom-card"

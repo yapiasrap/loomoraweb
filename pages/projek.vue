@@ -116,15 +116,17 @@ const filteredImages = computed(() => {
         v-for="(image, index) in filteredImages"
         :key="image.src"
         class="project-card"
-        :data-aos="'fade-up'"
+        :data-aos="'flip-up'"
         :data-aos-delay="index * 100"
+        :data-aos-duration="'1000'"
+        :data-aos-once="true"
       >
         <img
           :src="image.src"
           alt="Gambar Proyek Karpet"
           class="project-image"
         />
-        
+
         <div class="card-overlay">
           <div class="card-text">{{ image.text }}</div>
         </div>
