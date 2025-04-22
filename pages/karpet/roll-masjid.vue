@@ -103,6 +103,12 @@ const products = [
   },
 ];
 
+function openWhatsapp() {
+  window.open(
+    `https://api.whatsapp.com/send?phone=6281121902309&text=Hallo, saya mau bertanya lebih lanjut.`
+  );
+}
+
 useSeoMeta({
   title: "Karpet Roll Masjid",
   ogTitle: "Karpet Roll Masjid",
@@ -128,6 +134,7 @@ useSeoMeta({
       <span class="dot"></span>
       <span class="line"></span>
     </div>
+
     <p>
       Kami siap membantu menghadirkan karpet roll masjid yang nyaman, estetis,
       <br />
@@ -147,7 +154,8 @@ useSeoMeta({
         <div
           class="lux-col image"
           :style="{ backgroundImage: `url(${product.image})` }"
-        ></div>
+        />
+
         <div class="lux-col info">
           <div class="info-inner" data-aos="fade-up">
             <p class="category">KATEGORI</p>
@@ -156,6 +164,7 @@ useSeoMeta({
               <span class="price-old">{{ product.priceOld }}</span>
               <span class="price-new">{{ product.priceNew }}</span>
             </div>
+
             <ul class="details">
               <li v-for="(detail, i) in product.details" :key="i">
                 <svg class="icon" viewBox="0 0 24 24">
@@ -164,7 +173,12 @@ useSeoMeta({
                 <span>{{ detail }}</span>
               </li>
             </ul>
-            <a-button id="pesan_sekarang" text="Pesan Sekarang" />
+
+            <a-button
+              id="pesan_sekarang"
+              text="Pesan Sekarang"
+              @click="openWhatsapp"
+            />
           </div>
         </div>
       </template>
@@ -178,6 +192,7 @@ useSeoMeta({
               <span class="price-old">{{ product.priceOld }}</span>
               <span class="price-new">{{ product.priceNew }}</span>
             </div>
+
             <ul class="details">
               <li v-for="(detail, i) in product.details" :key="i">
                 <svg class="icon" viewBox="0 0 24 24">
@@ -187,13 +202,18 @@ useSeoMeta({
               </li>
             </ul>
 
-            <a-button id="pesan_sekarang" text="Pesan Sekarang" />
+            <a-button
+              id="pesan_sekarang"
+              text="Pesan Sekarang"
+              @click="openWhatsapp"
+            />
           </div>
         </div>
+
         <div
           class="lux-col image"
           :style="{ backgroundImage: `url(${product.image})` }"
-        ></div>
+        />
       </template>
     </div>
   </div>

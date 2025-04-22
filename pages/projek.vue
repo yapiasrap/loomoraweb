@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 
 useSeoMeta({
   robots: "noindex, nofollow",
@@ -123,17 +123,54 @@ const images = [
   },
 ];
 
+// Compute filtered list based on category
 const filteredImages = computed(() => {
   if (selectedCategory.value === "All") return images;
   return images.filter((img) => img.category === selectedCategory.value);
 });
+
+// Controls for "load more"
+const defaultLimits = { All: 6, other: 3 };
+const limit = ref(defaultLimits.All);
+const showAll = ref(false);
+
+// Reset when category changes
+watch(selectedCategory, (newCat) => {
+  showAll.value = false;
+  limit.value = newCat === "All" ? defaultLimits.All : defaultLimits.other;
+});
+
+const visibleImages = computed(() => {
+  return filteredImages.value.slice(0, limit.value);
+});
+
+const hasMore = computed(() => {
+  return limit.value < filteredImages.value.length;
+});
+
+function loadMore() {
+  limit.value = filteredImages.value.length;
+  showAll.value = true;
+}
+
+const selectedImage = ref(null);
+const showModal = ref(false);
+
+function openImageModal(image) {
+  selectedImage.value = image;
+  showModal.value = true;
+}
+
+function closeImageModal() {
+  showModal.value = false;
+}
 </script>
 
 <template>
   <!-- Komponen Banner Top -->
   <Top :operandata="banner" />
 
-  <a-container class="mb-5">
+  <a-container class="mb-5 project-page">
     <header class="project-header">
       <h1 class="main-title">Karpet Eksklusif</h1>
 
@@ -164,13 +201,14 @@ const filteredImages = computed(() => {
     <!-- Gallery Grid dengan Transisi pada Perpindahan Kategori -->
     <transition-group name="fade" tag="div" class="project-gallery">
       <div
-        v-for="(image, index) in filteredImages"
+        v-for="(image, index) in visibleImages"
         :key="image.src"
         class="project-card"
         :data-aos="'flip-up'"
         :data-aos-delay="index * 100"
         :data-aos-duration="'1000'"
         :data-aos-once="true"
+        @click="openImageModal(image)"
       >
         <img
           :src="image.src"
@@ -183,10 +221,30 @@ const filteredImages = computed(() => {
         </div>
       </div>
     </transition-group>
+
+    <!-- Modal Preview -->
+    <div v-if="showModal" class="image-modal" @click.self="closeImageModal">
+      <div class="image-modal-content">
+        <img :src="selectedImage?.src.replace('/kotak300', '')" alt="Preview" />
+        <p class="modal-caption">{{ selectedImage?.text }}</p>
+        <button class="modal-close" @click="closeImageModal">×</button>
+      </div>
+    </div>
+
+    <!-- Button Lihat Lainnya -->
+    <div v-if="hasMore" class="button-wrapper">
+      <a-button text="Lihat Lainnya" @click="loadMore" />
+    </div>
   </a-container>
 </template>
 
 <style scoped lang="scss">
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 /* Container Umum */
 .project-page {
   padding: 2rem 1rem;
@@ -318,5 +376,55 @@ const filteredImages = computed(() => {
 .fade-leave-to {
   opacity: 0;
   transform: scale(0.95);
+}
+
+.image-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(18, 18, 18, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1rem;
+
+  .image-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    text-align: center;
+
+    img {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 10px;
+      box-shadow: 0 0 20px #000;
+    }
+
+    .modal-caption {
+      margin-top: 1rem;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    .modal-close {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      background: #fff;
+      color: #121212;
+      border: none;
+      font-size: 1.5rem;
+      width: 35px;
+      height: 35px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+  }
 }
 </style>
