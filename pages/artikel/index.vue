@@ -229,7 +229,7 @@ useSeoMeta({
 
       <a-col class="col-12 col-sm-6 col-md-4">
         <LazyHydration when-visible>
-          <sidebar />
+          <sidebar class="mt-2 ml-5" />
         </LazyHydration>
       </a-col>
     </a-row>

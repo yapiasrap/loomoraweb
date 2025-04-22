@@ -96,7 +96,7 @@ const banner = ref({
         data-aos-duration="1000"
       >
         <LazyHydration when-visible>
-          <sidebar />
+          <sidebar class="ml-5" />
         </LazyHydration>
       </a-col>
     </a-row>
