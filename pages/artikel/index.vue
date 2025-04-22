@@ -80,7 +80,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <a-row style="margin-top: 15rem">
+  <a-row style="margin-top: 10rem">
     <!-- Featured Articles Large -->
     <a-col
       class="col col-md-7 col-sm-12"
