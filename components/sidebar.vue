@@ -40,14 +40,16 @@ function shuffleArray(array) {
     .map(({ value }) => value);
 }
 
+// Fetch data dari Firebase
 const { data: articlesData } = await useAsyncData(
   "articles",
-  () => $fetch("https://api.perkasaracking.co.id/data?key=articles"),
+  () => $fetch("https://loomora-cdb63-default-rtdb.firebaseio.com/articles.json"),
   { server: false, lazy: true }
 );
 
+// Mengubah data dari objek menjadi array
 const articles = computed(() => {
-  const raw = articlesData.value?.data;
+  const raw = articlesData.value;
   if (!raw) return [];
   return Array.isArray(raw) ? raw : Object.values(raw);
 });
@@ -68,9 +70,9 @@ watch(articles, () => {
       <div class="header-divider"></div>
     </div>
 
-    <ul class="articles-list">
-      <li v-for="post in randomArticles" :key="post.slug" class="article-item">
-        <a :href="`https://blog.perkasaracking.co.id/${post.slug}`">
+    <ul class="articles-list" v-if="randomArticles.length">
+      <li v-for="post in randomArticles" :key="post.slug || post.title" class="article-item">
+        <a :href="`/artikel/${post.slug}`">
           <div v-if="post.image" class="thumb">
             <img :src="post.image" :alt="post.title" />
           </div>
@@ -90,6 +92,10 @@ watch(articles, () => {
         </a>
       </li>
     </ul>
+
+    <div v-else class="text-center text-gray-400 py-6">
+      Tidak ada artikel ditemukan.
+    </div>
   </aside>
 </template>
 
