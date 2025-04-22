@@ -181,29 +181,29 @@ useSeoMeta({
   </a-row>
 
   <a-container class="jarak">
-    <a-row>
+    <!-- Pagination Header -->
+    <a-row class="mt-8" data-aos="fade-right" data-aos-delay="500">
       <a-col>
-        <!-- Pagination Header -->
-        <a-row class="mt-8" data-aos="fade-right" data-aos-delay="500">
-          <a-col>
-            <div class="milestone-header">
-              <span class="milestone-title">Artikel</span>
-              <div class="milestone-nav">
-                <button class="arrow-btn" @click="prevPage">&#10094;</button>
-                <span class="page-info">
-                  Halaman {{ currentPage }} dari {{ totalPages }}
-                </span>
-                <button class="arrow-btn" @click="nextPage">&#10095;</button>
-              </div>
-            </div>
-            <div class="milestone-line"></div>
-          </a-col>
-        </a-row>
+        <div class="milestone-header">
+          <span class="milestone-title">Artikel</span>
+          <div class="milestone-nav">
+            <button class="arrow-btn" @click="prevPage">&#10094;</button>
+            <span class="page-info">
+              Halaman {{ currentPage }} dari {{ totalPages }}
+            </span>
+            <button class="arrow-btn" @click="nextPage">&#10095;</button>
+          </div>
+        </div>
+        <div class="milestone-line"></div>
+      </a-col>
+    </a-row>
 
-        <!-- Blog Cards Grid -->
+    <!-- Blog Cards Grid -->
+    <a-row>
+      <a-col class="col-12 col-sm-6 col-md-8">
         <a-row>
           <a-col
-            class="col-md-4 col-sm-12"
+            class="col-md-6 col-sm-12"
             v-for="(article, idx) in paginatedItems"
             :key="idx"
             data-aos="fade-up"
@@ -226,21 +226,17 @@ useSeoMeta({
           </a-col>
         </a-row>
       </a-col>
+
+      <a-col class="col-12 col-sm-6 col-md-4">
+        <LazyHydration when-visible>
+          <sidebar />
+        </LazyHydration>
+      </a-col>
     </a-row>
   </a-container>
 </template>
 
 <style scoped lang="scss">
-.jarak {
-  margin-bottom: 40px;
-}
-
-@media (max-width: 576px) {
-  .jarak {
-    margin-top: -170px;
-  }
-}
-
 .custom-image-1,
 .custom-image-2,
 .custom-image-3 {

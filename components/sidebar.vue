@@ -19,6 +19,7 @@ const { data: dataproducts } = await useAsyncData(
   () => $fetch(`https://api.perkasaracking.co.id/data?key=products/heavy-duty`),
   { server: false, lazy: true }
 );
+
 const products = computed(() => {
   const raw = dataproducts.value?.data;
   if (!raw) return [];
@@ -30,6 +31,7 @@ const { data: articlesData } = await useAsyncData(
   () => $fetch(`https://api.perkasaracking.co.id/data?key=articles`),
   { server: false, lazy: true }
 );
+
 const articles = computed(() => {
   const raw = articlesData.value?.data;
   if (!raw) return [];
@@ -41,12 +43,13 @@ const randomProducts = ref([]);
 
 watch(articles, () => {
   if (articles.value.length && randomArticles.value.length === 0) {
-    randomArticles.value = shuffleArray(articles.value).slice(0, 5);
+    randomArticles.value = shuffleArray(articles.value).slice(0, 4);
   }
 });
+
 watch(products, () => {
   if (products.value.length && randomProducts.value.length === 0) {
-    randomProducts.value = shuffleArray(products.value).slice(0, 5);
+    randomProducts.value = shuffleArray(products.value).slice(0, 4);
   }
 });
 </script>
@@ -98,7 +101,7 @@ watch(products, () => {
 
 <style scoped lang="scss">
 .luxury-sidebar {
-  position: fixed;
+  position: sticky;
   top: 2rem;
   padding: 1.5rem;
 }
